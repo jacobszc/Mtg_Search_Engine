@@ -1,0 +1,13 @@
+// public IActionResult Print()
+//     {
+
+//         var cards = _dbContext.Cards.ToList();
+
+//        foreach (var card in cards)
+//     {
+//         _logger.LogInformation("Name= {Name}, ManaCost= {Cost}, ColorIdentity= {Color}",
+//             card.CardName, card.BaseManaCost, card.ColorIdentity);
+//     }
+
+//         return Ok();
+//     }
