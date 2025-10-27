@@ -14,7 +14,7 @@ builder.Services.AddControllers();
 //Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 var app = builder.Build();
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 
 using (var scope = app.Services.CreateScope())

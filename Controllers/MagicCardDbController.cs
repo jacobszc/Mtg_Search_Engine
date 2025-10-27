@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Demo.Controllers;
 
 [ApiController]
-[Route("jakecontroller")]
+[Route("api/cards")]
 public class MagicCardDbController : ControllerBase
 {
     
@@ -28,7 +28,14 @@ public class MagicCardDbController : ControllerBase
 
               var card = await _dbContext.Cards.AsNoTracking().FirstOrDefaultAsync(c => c.CardName.ToLower() == name.ToLower());  //<-- ok for now but fix nullable properties in Card later
 
-              if(card is null) return NotFound();
+        if (card is null) return NotFound();
+                
+                var cards = _dbContext.Cards.ToList();
+                foreach (var c in cards)
+    {
+               _logger.LogInformation("Name= {Name}, ManaCost= {Cost}, ColorIdentity= {Color}",
+                c.CardName, c.BaseManaCost, c.ColorIdentity);
+     }
 
               return Ok(card); 
 

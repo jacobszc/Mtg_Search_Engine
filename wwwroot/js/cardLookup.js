@@ -3,6 +3,9 @@ const button = document.getElementById('searchBtn')
 const result = document.getElementById('result')
 
 async function lookup() {
+  console.log("lookup() called!");
+
+
   const name = input.value.trim();
   if (!name) {
     result.innerHTML = '<p class="not-found">Please enter a card name.</p>';
@@ -23,13 +26,14 @@ async function lookup() {
     }
     const card = await res.json();
     result.innerHTML = `
-      <h2>${card.name}</h2>
+      <h2>${card.cardName} Found!</h2>
       <ul>
-        <li><b>Mana Cost:</b> ${card.manaCost ?? '-'}</li>
+        <li><b>Mana Cost:</b> ${card.baseManaCost ?? '-'}</li>
         <li><b>Color Identity:</b> ${card.colorIdentity ?? '-'}</li>
-        <li><b>Type:</b> ${card.type ?? '-'}</li>
-        <li><b>Power/Toughness:</b> ${card.power ?? '-'} / ${card.toughness ?? '-'}</li>
-        <li><b>ID:</b> ${card.id}</li>
+        <li><b>Type:</b> ${card.cardType ?? '-'}</li>
+        <li><b>Rarity:</b> ${card.rarity ?? '-'}</li>
+        <li><b>Description Text:</b> ${card.descriptionText ?? '-'}</li>
+       
       </ul>
     `;
   } catch (err) {
