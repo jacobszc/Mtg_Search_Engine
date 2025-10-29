@@ -1,12 +1,28 @@
-:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
 * { box-sizing: border-box; }
-body {
+
+html {
   margin: 0;
-  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  margin: 0;                     /* reset */
+  min-height: 100dvh;            /* ensure full-height for background */
   display: grid;
   place-items: center;
-  background: #f5f7fb;
+  padding: 2rem;                 /* replaces the second margin */
+  
 }
+
+h1 {
+  margin: 0 0 1rem 0;
+  color: #111;
+}
+
 .card {
   background: #fff;
   padding: 24px;
@@ -14,16 +30,20 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,.08);
   width: min(420px, 92vw);
 }
+
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
   color: #333;
 }
+
 .row {
   display: flex;
   gap: 10px;
+  width: min(640px, 92vw);
 }
+
 input[type="text"] {
   flex: 1;
   padding: 12px 14px;
@@ -31,11 +51,14 @@ input[type="text"] {
   border-radius: 10px;
   font-size: 16px;
   outline: none;
+  background: #fff;              /* remove noisy bg image on inputs */
 }
+
 input[type="text"]:focus {
   border-color: #6b8afd;
   box-shadow: 0 0 0 4px rgba(107,138,253,.15);
 }
+
 button {
   padding: 12px 16px;
   border: none;
@@ -45,5 +68,41 @@ button {
   font-weight: 600;
   cursor: pointer;
 }
+
 button:hover { filter: brightness(0.95); }
 button:active { transform: translateY(1px); }
+
+#result {
+  margin-top: 1rem;              /* moved from inline style */
+}
+
+.not-found { color: #b00020; }
+
+.background {
+  position: relative;
+  background-size: contain;
+  
+  
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: fade 25s infinite;
+  z-index: -1;
+}
+
+.fade1 { background-image: url("assets/backgrounds/body_background_1.png"); animation-delay: 0s; }
+.fade2 { background-image: url("assets/backgrounds/body_background_2.png"); animation-delay: 5s; }
+.fade3 { background-image: url("assets/backgrounds/body_background_3.png"); animation-delay: 10s; }
+
+
+@keyframes fade {
+  0%, 100%   { opacity: 0; }
+  10%, 20%   { opacity: 1; }  /* fade in/out window */
+}

@@ -70,13 +70,12 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.AssemblyInfo.cs
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.csproj.CoreCompileInputs.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.sourcelink.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\scopedcss\bundle\Demo.styles.css
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-c1qr8jtesx.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\w4drg27qay-hui7a78gqb.gz
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\i57m81jojb-narjjseb1t.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.development.json
@@ -87,3 +86,5 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\refint\Demo.dll
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.pdb
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.genruntimeconfig.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\ref\Demo.dll
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-vgj9tliukz.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\i57m81jojb-0k1afr79vz.gz

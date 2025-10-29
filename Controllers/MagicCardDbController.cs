@@ -19,7 +19,7 @@ public class MagicCardDbController : ControllerBase
         _dbContext = dbContext;
     }
 
-    [HttpGet("{name}")]
+    [HttpGet("{name}")] // when javascript sends fetch request to server, sends a get request to the server, it knows to pass the name sent to that function to this line, and pass the name result into this fuinction 
 
     public async Task<ActionResult<Card>> GetByName(string name) {
 
