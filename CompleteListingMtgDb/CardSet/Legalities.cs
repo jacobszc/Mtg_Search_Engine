@@ -1,3 +1,5 @@
+namespace CompletemtgDatabase;
+
 public class Legalities
 {
     public string? Alchemy { get; set; }

@@ -1,6 +1,6 @@
 
 
-namespace CompletemtgDatabase.cs
+namespace CompletemtgDatabase;
 {
     
 

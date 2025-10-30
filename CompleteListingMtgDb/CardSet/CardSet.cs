@@ -1,9 +1,7 @@
 namespace CompletemtgDatabase.cs
 
-public class RelatedCards {
+public class CardSet {
 
-    public class CardSet
-{
     public string? Artist { get; set; }
     
     public List<string>? ArtistIds { get; set; }
@@ -171,6 +169,4 @@ public class RelatedCards {
     public List<string>? Variations { get; set; }
     
     public string? Watermark { get; set; }
-}
-
 }
