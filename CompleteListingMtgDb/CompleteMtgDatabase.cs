@@ -5,7 +5,7 @@ namespace CompletemtgDatabase;
     public class CompletemtgDbContext  : DbContext
     {
         
-     public CompletemtgDbContext(DbContext options) : base(options) { }
+     public CompletemtgDbContext(DbContextOptions options) : base(options) { }
      
      
      
