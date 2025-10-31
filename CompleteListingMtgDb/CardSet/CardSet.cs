@@ -1,4 +1,6 @@
-namespace CompletemtgDatabase.cs
+namespace CompletemtgDatabase;
+
+//The Card (Set) Data Model describes the properties of a single card found in a Set.
 
 public class CardSet {
 
@@ -24,7 +26,7 @@ public class CardSet {
    
     public List<string> Colors { get; set; } = new();
     
-    public double ConvertedManaCost { get; set; }
+    public double manaValue { get; set; }
     
     public string? Defense { get; set; }
     
@@ -34,7 +36,7 @@ public class CardSet {
     
     public double? EdhrecSaltiness { get; set; }
     
-    public double? FaceConvertedManaCost { get; set; }
+    public double? C { get; set; }
     
     public string? FaceFlavorName { get; set; }
     
@@ -60,9 +62,7 @@ public class CardSet {
     
     public bool? HasContentWarning { get; set; }
     
-    public bool HasFoil { get; set; }
-    
-    public bool HasNonFoil { get; set; }
+     public List<string> finishes { get; set; } // this one property replaces hasFoil and hasNonFoil so if error look into that
     
     public Identifiers Identifiers { get; set; } = new();
     
