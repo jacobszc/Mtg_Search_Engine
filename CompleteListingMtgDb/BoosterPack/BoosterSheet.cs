@@ -1,4 +1,4 @@
-namespace CompletemtgDatabase.cs;
+namespace CompletemtgDatabase;
 
 public class BoosterSheet {
 
@@ -6,11 +6,11 @@ public class BoosterSheet {
     
     public bool? balanceColors { get; set; }
     
-    public Dictonary<string, int> cards { get; set; }
+    public Dictionary<string, int> cards { get; set; }
     
     public bool foil { get; set; }
     
-    public bool? fixed { get; set; }
+    public bool? Fixed { get; set; }
     
     public int totalWeight { get; set; }
 

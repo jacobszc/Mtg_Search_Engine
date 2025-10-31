@@ -1,7 +1,18 @@
-namespace CompletemtgDatabase.cs;
+namespace CompletemtgDatabase;
+
+
 public class BoosterConfig
 {
-    public string? Name { get; set; }
-    public int? Count { get; set; }
-    // add other fields as needed
+
+public List<BoosterPack> boosters {get; set;}
+
+public int boostersTotalWeight {get; set;}
+
+public string? name {get; set;}
+
+public Dictionary<string, BoosterSheet> sheets {get; set;}
+
+public List<string> sourceSetCodes {get; set;}
+
+    
 }

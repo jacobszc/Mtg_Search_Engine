@@ -1,8 +1,8 @@
-namespace CompletemtgDatabase.cs;
+namespace CompletemtgDatabase;
 
 public class BoosterPack {
 
-    public Dictionay<string, int>? contents { get; set; }
+    public Dictionary<string, int>? contents { get; set; }
 
-    public int number { get; set; };
+    public int weight { get; set; }
 }

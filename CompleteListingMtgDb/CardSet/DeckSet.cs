@@ -2,7 +2,7 @@ namespace CompletemtgDatabase;
 
 //The Deck (Set) Data Model describes the properties of an individual Deck within a Set.
 
-public class CardSet {
+public class DeckSet {
 
     public string code { get; set; }
 

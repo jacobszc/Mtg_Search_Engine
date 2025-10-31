@@ -1,15 +1,14 @@
 
 
 namespace CompletemtgDatabase;
-{
+
     
 
 
 
-    public class CompletemtgDatabaseException : DbContext
+    public class CompletemtgDatabase  : DbContext
     {
         
-      public DbSet<>
+      public DbSet<Set> set {get; set;}
 
     }
-}

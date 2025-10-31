@@ -1,4 +1,4 @@
-namespace CompletemtgDatabase.cs;
+namespace CompletemtgDatabase;
 
 
 public class Rulings {
