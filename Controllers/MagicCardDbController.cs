@@ -24,6 +24,9 @@ public class MagicCardDbController : ControllerBase
     public async Task<ActionResult<Card>> GetByName(string name) {
 
         if(string.IsNullOrWhiteSpace(name))
+
+
+        
               return BadRequest("Name is Required");
 
               var card = await _dbContext.Cards.AsNoTracking().FirstOrDefaultAsync(c => c.CardName.ToLower() == name.ToLower());  //<-- ok for now but fix nullable properties in Card later

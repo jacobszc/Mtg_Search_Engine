@@ -2,7 +2,7 @@ namespace CompletemtgDatabase;
 
 public class BoosterPack {
 
-    public Dictionary<string, int>? contents { get; set; }
+    public Dictionary<string, int>? Contents { get; set; }
 
-    public int weight { get; set; }
+    public int Weight { get; set; }
 }

@@ -4,15 +4,15 @@ namespace CompletemtgDatabase;
 public class BoosterConfig
 {
 
-public List<BoosterPack> boosters {get; set;}
+public List<BoosterPack> Boosters {get; set;}
 
-public int boostersTotalWeight {get; set;}
+public int BoostersTotalWeight {get; set;}
 
-public string? name {get; set;}
+public string? Name {get; set;}
 
-public Dictionary<string, BoosterSheet> sheets {get; set;}
+public Dictionary<string, BoosterSheet> Sheets {get; set;}
 
-public List<string> sourceSetCodes {get; set;}
+public List<string> SourceSetCodes {get; set;}
 
     
 }

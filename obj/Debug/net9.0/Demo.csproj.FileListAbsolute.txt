@@ -9,6 +9,7 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.MvcApplicationPartsAssemblyInfo.
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.sourcelink.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\appsettings.json
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\test\test.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Demo.staticwebassets.runtime.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Demo.staticwebassets.endpoints.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Demo.exe

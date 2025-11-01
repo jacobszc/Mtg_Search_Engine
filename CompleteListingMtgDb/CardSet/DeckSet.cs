@@ -4,19 +4,19 @@ namespace CompletemtgDatabase;
 
 public class DeckSet {
 
-    public string code { get; set; }
+    public string Code { get; set; } = string.Empty;
 
-    public List<CardSetDeck>? commander { get; set; }
+    public List<CardSetDeck>? Commander { get; set; }
 
-    public List<CardSetDeck> mainBoard { get; set; }
+    public List<CardSetDeck> MainBoard { get; set; } = new();
 
-    public string name {get; set;}
+    public string Name {get; set;} = string.Empty;
 
-    public string? releaseDate {get; set;}
+    public string? ReleaseDate {get; set;}
 
-    public List<string>? sealedProductUuids {get; set;}
+    public List<string>? SealedProductUuids {get; set;}
 
-    public List<CardSetDeck> sideBoard;
+    public List<CardSetDeck> SideBoard { get; set; } = new();
 
-    public string type {get; set;}
+    public string Type { get; set; } = string.Empty;
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using CompletemtgDatabase;
 using System.Text.Json;
+using  TestItemNS;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MagicCardDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MagiccardDb")));
@@ -11,23 +12,23 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 
-// using (var scope = app.Services.CreateScope())
-// {
-//             string fileName = "C:\\Users\\Jacob\repos\\AllPrintings.json";
-//             string jsonString = File.ReadAllText(fileName);
-//             CompletemtgDbContext mtgDbContext = JsonSerializer.Deserialize<CompletemtgDbContext>(jsonString)!;
+using (var scope = app.Services.CreateScope())
+{
+            string fileName = "test/test.json";
+            string jsonString = File.ReadAllText(fileName);
+            var _TestItem = JsonSerializer.Deserialize<TestItem>(jsonString)!;
             
-//             //Console.WriteLine($"Date: {mtgDbContext.Rulings}");
+            Console.WriteLine(_TestItem.Id);
             
 
 
 
-// }
+}
 
-app.UseDefaultFiles(); // Looks for index.html by default
+//app.UseDefaultFiles(); // Looks for index.html by default
  app.UseStaticFiles();
 
 // Configure the HTTP request pipeline.
@@ -40,7 +41,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
-app.MapControllers();
+//app.MapControllers();
 
 
 

@@ -11,7 +11,7 @@ namespace CompletemtgDatabase;
      
      
      
-      public DbSet<Set> set {get; set;}
+      public DbSet<Set> Set {get; set;}
       
       public DbSet<BoosterConfig> BoosterConfig {get; set;}
 
@@ -43,7 +43,7 @@ namespace CompletemtgDatabase;
 
       public DbSet< SealedProduct>  SealedProduct {get; set;}
 
-      public DbSet< SealedProductCard>  SealedProductCard {get; set;}
+      public DbSet<SealedProductCard>  SealedProductCard {get; set;}
 
       public DbSet< SealedProductContents>  SealedProductContents {get; set;}
 

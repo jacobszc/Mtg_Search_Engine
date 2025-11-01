@@ -26,7 +26,7 @@ public class CardSet {
    
     public List<string> Colors { get; set; } = new();
     
-    public double manaValue { get; set; }
+    public double ManaValue { get; set; }
     
     public string? Defense { get; set; }
     
@@ -36,7 +36,7 @@ public class CardSet {
     
     public double? EdhrecSaltiness { get; set; }
     
-    public double? C { get; set; }
+    //public double? FaceConvertedManaCost { get; set; }
     
     public string? FaceFlavorName { get; set; }
     
@@ -61,9 +61,6 @@ public class CardSet {
     public bool? HasAlternativeDeckLimit { get; set; }
     
     public bool? HasContentWarning { get; set; }
-    
-     public List<string> finishes { get; set; } // this one property replaces hasFoil and hasNonFoil so if error look into that
-    
     public Identifiers Identifiers { get; set; } = new();
     
     public bool? IsAlternative { get; set; }
@@ -110,7 +107,7 @@ public class CardSet {
     
     public string? ManaCost { get; set; }
     
-    public double ManaValue { get; set; }
+    //public double ManaValue { get; set; }
     
     public string Name { get; set; } = string.Empty;
     
