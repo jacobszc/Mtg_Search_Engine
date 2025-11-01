@@ -4,9 +4,9 @@ namespace CompletemtgDatabase;
 
 public class CardSetDeck {
 
-    public int count {get; set;}
+    public int Count {get; set;}
 
-    public bool? isFoil {get; set;}
+    public bool? IsFoil {get; set;}
 
-    public string uuid {get; set;}
+    public string Uuid {get; set;}
 }

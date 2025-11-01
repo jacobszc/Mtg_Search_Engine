@@ -1,6 +1,6 @@
 namespace CompletemtgDatabase;
 
-public class SealedProductCard
+public class  SealedProductCard
     {
         public bool? Foil { get; set; }
 

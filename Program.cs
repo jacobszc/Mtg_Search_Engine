@@ -1,36 +1,31 @@
-﻿
-
-
-using Microsoft.EntityFrameworkCore;
-
+﻿using Microsoft.EntityFrameworkCore;
+using CompletemtgDatabase;
+using System.Text.Json;
 var builder = WebApplication.CreateBuilder(args);
-
-
 
 builder.Services.AddDbContext<MagicCardDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MagiccardDb")));
 
-
 builder.Services.AddControllers();
-//Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
 builder.Services.AddOpenApi();
+
 var app = builder.Build();
-//app.UseHttpsRedirection();
+
+app.UseHttpsRedirection();
 
 
-using (var scope = app.Services.CreateScope())
-{
-    var dbContext = scope.ServiceProvider.GetRequiredService<MagicCardDbContext>();
-       
-       if(!dbContext.Database.CanConnect())
-    {
-
-        throw new NotImplementedException("cant connect");
-    }
-
+// using (var scope = app.Services.CreateScope())
+// {
+//             string fileName = "C:\\Users\\Jacob\repos\\AllPrintings.json";
+//             string jsonString = File.ReadAllText(fileName);
+//             CompletemtgDbContext mtgDbContext = JsonSerializer.Deserialize<CompletemtgDbContext>(jsonString)!;
+            
+//             //Console.WriteLine($"Date: {mtgDbContext.Rulings}");
+            
 
 
 
-}
+// }
 
 app.UseDefaultFiles(); // Looks for index.html by default
  app.UseStaticFiles();
