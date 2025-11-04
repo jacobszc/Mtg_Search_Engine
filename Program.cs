@@ -20,13 +20,13 @@ app.UseHttpsRedirection();
 
 using (var scope = app.Services.CreateScope())
 {
-    var options = new JsonSerializerOptions{ PropertyNameCaseInsensitive = true };
+    var options = new JsonSerializerOptions{ PropertyNameCaseInsensitive = true, IncludeFields = true };
             
-            string fileName = "test/test.json";
+            string fileName = "C:\\Users\\Jacob\\repos\\AllPrintings.json";
             string jsonString = File.ReadAllText(fileName);
-            var _TestItem = JsonSerializer.Deserialize<TestItem>(jsonString, options)!;
+            var _TestItem = JsonSerializer.Deserialize<CompletemtgDbContext>(jsonString, options)!;
             
-            Console.WriteLine(_TestItem.Id);
+            //Console.WriteLine();
             
 
 
