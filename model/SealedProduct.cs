@@ -16,7 +16,7 @@ public class SealedProduct {
 
     public int? ProductSize { get; set; }
 
-    public PurchaseUrls PurchaseUrls { get; set; } = new PurchaseUrls();
+    public PurchaceUrls PurchaceUrls { get; set; } = new PurchaceUrls();
 
     public string? ReleaseDate { get; set; }
 

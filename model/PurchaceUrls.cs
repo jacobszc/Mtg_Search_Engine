@@ -1,6 +1,6 @@
 namespace CompletemtgDatabase;
 
-public class PurchaseUrls
+public class PurchaceUrls
 {
 
     public int Id { get; set; }

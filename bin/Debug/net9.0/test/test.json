@@ -1,7 +1,0 @@
-{
-  "id": 1,
-  "name": "Test Item",
-  "Tags": ["magic", "mtg", "test"],
-  "isActive": true,
-  "rating": 4.5
-}

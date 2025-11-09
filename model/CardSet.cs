@@ -131,7 +131,7 @@ public class CardSet {
     
     public List<string>? PromoTypes { get; set; }
     
-    public PurchaseUrls PurchaseUrls { get; set; } = new();
+    public PurchaceUrls PurchaceUrls { get; set; } = new();
     
     public string Rarity { get; set; } = string.Empty;
    

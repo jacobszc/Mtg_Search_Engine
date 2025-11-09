@@ -2,6 +2,7 @@
 using CompletemtgDatabase;
 using System.Text.Json;
 using  TestItemNS;
+using Microsoft.Identity.Client;
 
 
 
@@ -13,27 +14,15 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
+builder.Services.AddSingleton<MtgJsonDeserializer>(new MtgJsonDeserializer("C:\\Users\\Jacob\\repos\\AllPrintings.json"));
+
 var app = builder.Build();
 
 app.UseHttpsRedirection();
 
 
-// using (var scope = app.Services.CreateScope())
-// {
-//     var options = new JsonSerializerOptions{ PropertyNameCaseInsensitive = true, IncludeFields = true };
 
-//             string fileName = "CompleteListingMtgDb\\BoosterPack\\BoosterPack.json";
-//             string jsonString = File.ReadAllText(fileName);
-//              var _TestItem = JsonSerializer.Deserialize<BoosterPack>(jsonString, options)!;
-
-
-
-//             Console.WriteLine(_TestItem.Weight);
-
-
-
-
-// }
+    
 
 
 
@@ -46,7 +35,11 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
-
+app.MapGet("/loadjson", async (MtgJsonDeserializer loader) =>
+{
+    await loader.DeserializeMtgJson();
+    return Results.Ok("Loaded!");
+});
 
 app.UseAuthorization();
 
