@@ -33,7 +33,7 @@ namespace CompletemtgDatabase;
 
       public DbSet<Legalities> Legalities {get; set;}
 
-      public DbSet<PurchaseUrls> PurchaseUrls {get; set;}
+      public DbSet<PurchaceUrls> PurchaceUrls {get; set;}
 
       public DbSet<RelatedCards> RelatedCards {get; set;}
 
@@ -41,7 +41,7 @@ namespace CompletemtgDatabase;
 
       public DbSet<SourceProducts> SourceProducts {get; set;}
 
-      public DbSet< SealedProduct>  SealedProduct {get; set;}
+      public DbSet<SealedProduct>  SealedProduct {get; set;}
 
       public DbSet<SealedProductCard>  SealedProductCard {get; set;}
 

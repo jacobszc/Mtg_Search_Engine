@@ -8,17 +8,17 @@ public class DeckSet {
 
     public string Code { get; set; } = string.Empty;
 
-    public List<CardSetDeck>? Commander { get; set; }
+    public CardSetDeck[]? Commander { get; set; }
 
-    public List<CardSetDeck> MainBoard { get; set; } = new();
+    public CardSetDeck[] MainBoard { get; set; } =[];
 
     public string Name {get; set;} = string.Empty;
 
     public string? ReleaseDate {get; set;}
 
-    public List<string>? SealedProductUuids {get; set;}
+    public string[]? SealedProductUuids {get; set;}
 
-    public List<CardSetDeck> SideBoard { get; set; } = new();
+    public CardSetDeck[] SideBoard { get; set; } = [];
 
     public string Type { get; set; } = string.Empty;
 }

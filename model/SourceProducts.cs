@@ -5,9 +5,9 @@ public class SourceProducts
 
   public int Id { get; set; }
 
-  public List<string> etched { get; set; } = new();
+  public string[] Ntched { get; set; } = [];
 
-  public List<string> foil { get; set; } = new();
+  public string[] Foil { get; set; } =[];
 
-  public List<string> nonfoil { get; set; } = new();
+  public string[] Nonfoil { get; set; } = [];
 }

@@ -13,7 +13,7 @@ public class Set
     [NotMapped]
     public Dictionary<string, BoosterConfig>? Booster { get; set; } // booster is the name of the object and it a dictorany that maps a string to a confi and it may be null
     
-    public List<CardSet> Cards { get; set; } = new();
+    public CardSet[] Cards { get; set; } = Array.Empty<CardSet>();
     
     public int? CardsphereSetId { get; set; }
     
@@ -21,7 +21,7 @@ public class Set
     
     public string? CodeV3 { get; set; }
     
-    public List<DeckSet>? Decks { get; set; }
+    public DeckSet[]? Decks { get; set; }
     
     public bool? IsForeignOnly { get; set; }
     
@@ -37,7 +37,7 @@ public class Set
     
     public string KeyruneCode { get; set; } = string.Empty;
     
-    public List<string>? Languages { get; set; }
+    public string[]? Languages { get; set; }
     
     public int? McmId { get; set; }
     
@@ -53,11 +53,11 @@ public class Set
     
     public string ReleaseDate { get; set; } = string.Empty;
     
-    public List<SealedProduct>? SealedProduct { get; set; }
+    public SealedProduct[]? SealedProduct { get; set; }
     
     public int? TcgplayerGroupId { get; set; }
     
-    public List<CardToken> Tokens { get; set; } = new();
+    public CardToken[] Tokens { get; set; } = Array.Empty<CardToken>();
     
     public string? TokenSetCode { get; set; }
     
