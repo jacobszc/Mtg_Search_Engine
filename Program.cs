@@ -28,7 +28,9 @@ if (string.IsNullOrEmpty(filePath))
 else
 {
     // ✅ Instantiate your class
-    using var allPrintings = new AllPrintingsJsonDocument(filePath);
+     JsonDocument allPrintings = new AllPrintingsJsonDocument(filePath).GetJsonDocument();
+
+
 
     // Optionally call a method if you want (not needed if constructor auto-loads)
     // allPrintings.StringToDoc(filePath);

@@ -9,8 +9,8 @@ namespace Json.Parser
         
 
         public void StringToDoc(string path); // call parse on a json string
-        
 
+        public JsonDocument GetJsonDocument();
 
 
 
