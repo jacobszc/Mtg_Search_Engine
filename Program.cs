@@ -28,7 +28,9 @@ if (string.IsNullOrEmpty(filePath))
 else
 {
     // ✅ Instantiate your class
-     JsonDocument allPrintings = new AllPrintingsJsonDocument(filePath).GetJsonDocument();
+    JsonDocument allPrintings = new AllPrintingsJsonDocumentConverter(filePath).GetJsonDocument();
+
+    AllPrintingsJsonDocumentDeserialzier Mything = new AllPrintingsJsonDocumentDeserialzier(allPrintings);
 
 
 
