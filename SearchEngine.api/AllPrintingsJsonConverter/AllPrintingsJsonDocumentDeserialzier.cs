@@ -19,6 +19,10 @@ public AllPrintingsJsonDocumentDeserialzier(JsonDocument AllPrintingsJsonDocumen
         JsonElement root = _allPrintingsjsonDocument.RootElement;
         var data = root.GetProperty("data");
         JsonElement ValueElement = new JsonElement() ;
+        var options = new JsonSerializerOptions
+        {
+          PropertyNameCaseInsensitive = true
+         };
 
 
         foreach (JsonProperty setProperty in data.EnumerateObject())   {    //<---- works but ver slow. need to set up as stream
@@ -28,7 +32,7 @@ public AllPrintingsJsonDocumentDeserialzier(JsonDocument AllPrintingsJsonDocumen
             if(ValueElement.TryGetProperty( "baseSetSize", out _))
             {
                  Console.Write("The type of this is Set!");
-                 Set? Set = JsonSerializer.Deserialize<Set>(ValueElement);
+                 Set? Set = JsonSerializer.Deserialize<Set>(ValueElement, options);
             }
             
             
