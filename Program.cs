@@ -30,7 +30,7 @@ else
     // ✅ Instantiate your class
     JsonDocument allPrintings = new AllPrintingsJsonDocumentConverter(filePath).GetJsonDocument();
 
-    AllPrintingsJsonDocumentDeserialzier Mything = new AllPrintingsJsonDocumentDeserialzier(allPrintings);
+    AllPrintingsJsonDocumentDeserialzier DocDeserialzier = new AllPrintingsJsonDocumentDeserialzier(allPrintings);
 
 
 
