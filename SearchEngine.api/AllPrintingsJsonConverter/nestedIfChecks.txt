@@ -1,0 +1,13 @@
+// if(SetElement.TryGetProperty("contents", out _) && SetElement.TryGetProperty("weight", out _))
+//            {
+//             Console.Write("The type of this is BoosterPack");
+//             BoosterPack? BoosterPack = JsonSerializer.Deserialize<BoosterPack>(SetElement, options);
+//             continue;
+//            }
+
+//            if(SetElement.TryGetProperty("allowDuplicates", out _) && SetElement.TryGetProperty("balanceColors", out _))
+//            {
+//             Console.Write("The type of this is BoosterSheet");
+//             BoosterSheet? BoosterSheet = JsonSerializer.Deserialize<BoosterSheet>(SetElement, options);
+//             continue;
+//            }

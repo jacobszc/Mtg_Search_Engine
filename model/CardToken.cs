@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace CompletemtgDatabase;
 
@@ -105,7 +106,8 @@ public class CardToken
     public string? Side { get; set; }
 
     public string? Signature { get; set; }
-
+    
+    [JsonIgnore]
     public string[]? SourceProducts { get; set; }
 
 

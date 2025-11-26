@@ -1,6 +1,5 @@
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\appsettings.json
-C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\model\BoosterPack.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\test\test.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Demo.staticwebassets.runtime.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Demo.staticwebassets.endpoints.json

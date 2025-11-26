@@ -55,7 +55,7 @@ public class CardSet
     public string? FlavorText { get; set; }
 
 
-    public ForeignData[]? ForeignData { get; set; }
+    public List<ForeignData>? ForeignData { get; set; }
 
 
     public string[]? FrameEffects { get; set; }
@@ -147,7 +147,7 @@ public class CardSet
     public string[]? RebalancedPrintings { get; set; }
 
     [NotMapped]
-    public Rulings[]? Rulings { get; set; }
+    public List<Rulings>? Rulings { get; set; }
 
     public string? SecurityStamp { get; set; }
 

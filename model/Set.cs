@@ -1,6 +1,6 @@
 namespace CompletemtgDatabase;
 using System.ComponentModel.DataAnnotations.Schema;
-
+using System.Text.Json.Serialization;
 
 public class Set
 {
@@ -13,7 +13,8 @@ public class Set
     [NotMapped]
     public Dictionary<string, BoosterConfig>? Booster { get; set; } // booster is the name of the object and it a dictorany that maps a string to a confi and it may be null
     
-    public CardSet[] Cards { get; set; } = Array.Empty<CardSet>();
+    
+    public List<CardSet> Cards { get; set; } = new List<CardSet>();
     
     public int? CardsphereSetId { get; set; }
     
@@ -21,6 +22,8 @@ public class Set
     
     public string? CodeV3 { get; set; }
     
+
+    [NotMapped]
     public DeckSet[]? Decks { get; set; }
     
     public bool? IsForeignOnly { get; set; }
@@ -37,7 +40,9 @@ public class Set
     
     public string KeyruneCode { get; set; } = string.Empty;
     
-    public string[]? Languages { get; set; }
+    [JsonIgnore]
+    [NotMapped]
+     public string[] Languages { get; set; } = Array.Empty<string>();
     
     public int? McmId { get; set; }
     
@@ -53,10 +58,11 @@ public class Set
     
     public string ReleaseDate { get; set; } = string.Empty;
     
+    [NotMapped]
     public SealedProduct[]? SealedProduct { get; set; }
     
     public int? TcgplayerGroupId { get; set; }
-    
+    [NotMapped]
     public CardToken[] Tokens { get; set; } = Array.Empty<CardToken>();
     
     public string? TokenSetCode { get; set; }

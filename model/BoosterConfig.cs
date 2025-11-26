@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace CompletemtgDatabase;
 
@@ -17,7 +18,7 @@ public class BoosterConfig
 
    [NotMapped]
    public Dictionary<string, BoosterSheet> Sheets { get; set; } = new();
-
+   [JsonIgnore]
    public string[] SourceSetCodes { get; set; } = Array.Empty<string>();
 
     

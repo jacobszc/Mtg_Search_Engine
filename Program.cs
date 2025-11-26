@@ -28,12 +28,29 @@ if (string.IsNullOrEmpty(filePath))
 else
 {
     // ✅ Instantiate your class
-    JsonDocument allPrintings = new AllPrintingsJsonDocumentConverter(filePath).GetJsonDocument();
 
-    AllPrintingsJsonDocumentDeserialzier DocDeserialzier = new AllPrintingsJsonDocumentDeserialzier(allPrintings);
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<mtgDbContext>();
+
+        JsonDocument allPrintings =
+            new AllPrintingsJsonDocumentConverter(filePath).GetJsonDocument();
+
+        var deserializer = new AllPrintingsJsonDocumentDeserialzier(allPrintings, db);
+
+        // sync method is fine if you want:
+        
+        // Inside that you can call db.Add(...); db.SaveChanges();
+    }
+    
 
 
-
+    
+    
+    
+    
+    
+    
     // Optionally call a method if you want (not needed if constructor auto-loads)
     // allPrintings.StringToDoc(filePath);
 }
