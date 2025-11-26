@@ -23,8 +23,8 @@ public class Set
     public string? CodeV3 { get; set; }
     
 
-    [NotMapped]
-    public DeckSet[]? Decks { get; set; }
+    
+    public List<DeckSet>? Decks { get; set; }
     
     public bool? IsForeignOnly { get; set; }
     
@@ -40,9 +40,8 @@ public class Set
     
     public string KeyruneCode { get; set; } = string.Empty;
     
-    [JsonIgnore]
-    [NotMapped]
-     public string[] Languages { get; set; } = Array.Empty<string>();
+    
+     public List<string> Languages { get; set; } =new List<string>();
     
     public int? McmId { get; set; }
     
@@ -58,12 +57,12 @@ public class Set
     
     public string ReleaseDate { get; set; } = string.Empty;
     
-    [NotMapped]
-    public SealedProduct[]? SealedProduct { get; set; }
+    
+    public List<SealedProduct>? SealedProduct { get; set;}
     
     public int? TcgplayerGroupId { get; set; }
-    [NotMapped]
-    public CardToken[] Tokens { get; set; } = Array.Empty<CardToken>();
+    
+    public List<CardToken> Tokens { get; set; } = new List<CardToken>();
     
     public string? TokenSetCode { get; set; }
     

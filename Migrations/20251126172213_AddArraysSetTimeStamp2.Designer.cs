@@ -3,6 +3,7 @@ using CompletemtgDatabase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Demo.Migrations
 {
     [DbContext(typeof(mtgDbContext))]
-    partial class mtgDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251126172213_AddArraysSetTimeStamp2")]
+    partial class AddArraysSetTimeStamp2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -550,9 +553,6 @@ namespace Demo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SetId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Side")
                         .HasColumnType("nvarchar(max)");
 
@@ -599,8 +599,6 @@ namespace Demo.Migrations
                     b.HasIndex("IdentifiersId");
 
                     b.HasIndex("RelatedCardsId");
-
-                    b.HasIndex("SetId");
 
                     b.ToTable("CardToken");
                 });
@@ -985,9 +983,6 @@ namespace Demo.Migrations
                     b.Property<string>("ReleaseDate")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SetId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Subtype")
                         .HasColumnType("nvarchar(max)");
 
@@ -1002,8 +997,6 @@ namespace Demo.Migrations
                     b.HasIndex("IdentifiersId");
 
                     b.HasIndex("PurchaceUrlsId");
-
-                    b.HasIndex("SetId");
 
                     b.ToTable("SealedProduct");
                 });
@@ -1221,10 +1214,6 @@ namespace Demo.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("KeyruneCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.PrimitiveCollection<string>("Languages")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -1446,10 +1435,6 @@ namespace Demo.Migrations
                         .WithMany()
                         .HasForeignKey("RelatedCardsId");
 
-                    b.HasOne("CompletemtgDatabase.Set", null)
-                        .WithMany("Tokens")
-                        .HasForeignKey("SetId");
-
                     b.Navigation("Identifiers");
 
                     b.Navigation("RelatedCards");
@@ -1494,10 +1479,6 @@ namespace Demo.Migrations
                         .HasForeignKey("PurchaceUrlsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("CompletemtgDatabase.Set", null)
-                        .WithMany("SealedProduct")
-                        .HasForeignKey("SetId");
 
                     b.Navigation("Contents");
 
@@ -1604,10 +1585,6 @@ namespace Demo.Migrations
                     b.Navigation("Cards");
 
                     b.Navigation("Decks");
-
-                    b.Navigation("SealedProduct");
-
-                    b.Navigation("Tokens");
                 });
 #pragma warning restore 612, 618
         }

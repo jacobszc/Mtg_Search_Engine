@@ -107,7 +107,7 @@ public class CardToken
 
     public string? Signature { get; set; }
     
-    [JsonIgnore]
+   
     public string[]? SourceProducts { get; set; }
 
 

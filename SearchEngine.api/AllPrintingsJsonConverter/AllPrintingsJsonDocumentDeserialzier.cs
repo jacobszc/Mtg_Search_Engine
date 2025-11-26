@@ -37,51 +37,70 @@ public AllPrintingsJsonDocumentDeserialzier(JsonDocument AllPrintingsJsonDocumen
         foreach (JsonProperty setProperty in data.EnumerateObject())   {    
              SetElement = default;
              SetElement = setProperty.Value;
-             
+    //////////////////////////////////// Set //////////////////////////////////////////// 
              
              Set? Set = JsonSerializer.Deserialize<Set>(SetElement, options);
                  _db.Set.Add(Set);
                  _db.SaveChanges();
 
-     /////////////////////////////// grabbing a set each time so derserialziue the set and then look into the nested arryas ////////////            
+
+
+                  //////////////////////////////// Token ////////////////////////////////////////////////
+
+
+           if(SetElement.TryGetProperty("tokens", out var TokensElement)) {
+             foreach(var TokenEle in TokensElement.EnumerateArray())
+
+               {
+                Console.Write("The type of this is CardToken");
+                CardToken? CardToken = JsonSerializer.Deserialize<CardToken>(TokenEle, options);
+                _db.CardToken.Add(CardToken);
+                _db.SaveChanges();
+                continue;
+                
+              }
+
+           }
+
+     /////////////////////////////// cardSetDeck ////////////////////////////////////////////////////            
                  
                 
+            if(SetElement.TryGetProperty("decks", out var DecksElement))
+                foreach(var DeckEle in DecksElement.EnumerateArray())
+                {
+                    Console.Write("The type of this is CardSetDeck");
+                    CardSetDeck? CardSetDeck = JsonSerializer.Deserialize<CardSetDeck>(DeckEle, options);
+                    _db.CardSetDeck.Add(CardSetDeck);
+                    _db.SaveChanges();
+                    continue;
+                }
             
-            
-        
+     ///////////////////////////////////////////////////CardSet//////////////////////////////////////////////////////////////   
 
            
 
            if(SetElement.TryGetProperty("cards", out var CardsElement))
         
-        foreach(var CardEle in CardsElement.EnumerateArray()) {
+              foreach(var CardEle in CardsElement.EnumerateArray()) {
 
            
-            Console.Write("The type of this is CardSet");
-            CardSet? Card = JsonSerializer.Deserialize<CardSet>(CardEle, options);
-            _db.CardSet.Add(Card);
-            _db.SaveChanges();
-            continue;
+                Console.Write("The type of this is CardSet");
+                CardSet? Card = JsonSerializer.Deserialize<CardSet>(CardEle, options);
+                _db.CardSet.Add(Card);
+                _db.SaveChanges();
+                 continue;
            
 
-        }
+            }
 
 
-           if(SetElement.TryGetProperty("isFoil", out _) && SetElement.TryGetProperty("count", out _))
-           {
-            Console.Write("The type of this is CardSetDeck");
-            CardSetDeck? CardSetDeck = JsonSerializer.Deserialize<CardSetDeck>(SetElement, options);
-            continue;
-           }
+          
 
-
-           if(SetElement.TryGetProperty("cardParts", out _) && SetElement.TryGetProperty("colorIndicator", out _))
-           {
-            Console.Write("The type of this is CardToken");
-            CardToken? CardToken = JsonSerializer.Deserialize<CardToken>(SetElement, options);
-            continue;
-           }
-
+           
+           
+           
+           
+           
            if(SetElement.TryGetProperty("commander", out _) && SetElement.TryGetProperty("mainBoard", out _))
            {
             Console.Write("The type of this is DeckSet");

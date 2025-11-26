@@ -8,9 +8,9 @@ public class DeckSet {
 
     public string Code { get; set; } = string.Empty;
 
-    public CardSetDeck[]? Commander { get; set; }
+    public List<CardSetDeck>? Commander { get; set; }
 
-    public CardSetDeck[] MainBoard { get; set; } =[];
+    public List<CardSetDeck> MainBoard { get; set; } =new List<CardSetDeck>();
 
     public string Name {get; set;} = string.Empty;
 
@@ -18,7 +18,7 @@ public class DeckSet {
 
     public string[]? SealedProductUuids {get; set;}
 
-    public CardSetDeck[] SideBoard { get; set; } = [];
+    public List<CardSetDeck> SideBoard { get; set; } = new List<CardSetDeck>();
 
     public string Type { get; set; } = string.Empty;
 }
