@@ -162,7 +162,7 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\scopedcss\bundle\Demo.styles.css
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-v7d85s0g7i.gz
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\w4drg27qay-hui7a78gqb.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\w4drg27qay-ds2efm9ubk.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\i57m81jojb-1g0r2yndw2.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.build.json.cache

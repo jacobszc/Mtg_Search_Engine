@@ -21,41 +21,6 @@ var app = builder.Build();
 
 string? filePath = "C:\\Users\\Jacob\\repos\\AllPrintings.json";
 
-if (string.IsNullOrEmpty(filePath))
-{
-    Console.WriteLine("Error: AllPrintingsFilePath not found in appsettings.json");
-}
-else
-{
-    // ✅ Instantiate your class
-
-    using (var scope = app.Services.CreateScope())
-    {
-        var db = scope.ServiceProvider.GetRequiredService<mtgDbContext>();
-
-        JsonDocument allPrintings =
-            new AllPrintingsJsonDocumentConverter(filePath).GetJsonDocument();
-
-        var deserializer = new AllPrintingsJsonDocumentDeserialzier(allPrintings, db);
-
-        // sync method is fine if you want:
-        
-        // Inside that you can call db.Add(...); db.SaveChanges();
-    }
-    
-
-
-    
-    
-    
-    
-    
-    
-    // Optionally call a method if you want (not needed if constructor auto-loads)
-    // allPrintings.StringToDoc(filePath);
-}
-
-
 
 
 
