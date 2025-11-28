@@ -1,11 +1,11 @@
 const InputBar = document.getElementById('InputBar')  
-const SearchButton = document.getElementById('searchButton')
+const SearchButton = document.getElementById('SearchButton')
 const ResultDiv = document.getElementById('ResultDiv')
 
 //// the above varioables will hold references within the DOm to the html elemetns, NOT THE VALUES
 
 
-button.addEventListener("click", () => {   // add event listener to my button that when cliked, calls a lambda function 
+SearchButton.addEventListener("click", () => {   // add event listener to my button that when cliked, calls a lambda function 
   
   
   const query = InputBar.value.trim(); // define a query variable to store user input. input.value is the value givent o my input div in my html.
@@ -21,26 +21,26 @@ button.addEventListener("click", () => {   // add event listener to my button th
 async function searchCards(query) { // were calling an async function because inside we can use fetch, and while we wait for the fetch to resolve, the program wont pause
   try {
     // call your ASP.NET Core API
-    const response = await fetch(`/api/cardsearch/search?q=${encodeURIComponent(query)}`); // ? start the query and qu is the name of the paramter 
+    const response = await fetch(`/api/cardsearch/search?queryResult=${encodeURIComponent(query)}`); // ? start the query and qu is the name of the paramter 
        // so the above line says "in a thread, go the the fucntion decorated with the search label in mu controller, it will be named search"
        // and pass the paramter q to that function, and here ${... } is literal interpolation, jsut meaning use the value of whatevers inside as a string
        // finlay encodeuri jsut makes ure the query string doesnt contain any characters that would break the url
     
        if (!response.ok) { // if c# controller cuntion response was not succesful, it will return BADREQUEST aloong with "Query parameter 'queryResult' is required." response was returned from fetch so it is a Repsonse type object and respose.ok check is the boolen reposce member is ok
       const text = await response.text();// respone can be in josn, xml, string foramt etc... so grab the string version of the reponse.
-      resultsDiv.innerHTML = `<p>Error: ${text}</p>`; // display " ERROR: Query parameter 'queryResult' is required. "
+      ResultDiv.innerHTML = `<p>Error: ${text}</p>`; // display " ERROR: Query parameter 'queryResult' is required. "
       return;
     }
 
     const cards = await response.json(); // finaly if there was a query entered, and an OK reposnse returned, we make it here, and store the json of the card we requested, and is in the Response object body
 
     if (cards.length === 0) { // if the length of the json list retuned is 0, 
-      resultsDiv.innerHTML = "<p>No cards found.</p>"; //then it was succesful but no cards were found that match the query
+      ResultDiv.innerHTML = "<p>No cards found.</p>"; //then it was succesful but no cards were found that match the query
       return;
     }
 
     // Render results
-    resultsDiv.innerHTML = ""; //create an empty div to display our results
+    ResultDiv.innerHTML = ""; //create an empty div to display our results
 
     cards.forEach(card => { // for each enumerable json in out retunrted list of cards
       const div = document.createElement("div"); // create a new div and format it
@@ -59,10 +59,10 @@ async function searchCards(query) { // were calling an async function because in
         </ul>
       `;
 
-      resultsDiv.appendChild(div);
+      ResultDiv.appendChild(div);
     });
   } catch (err) {
     console.error(err);
-    resultsDiv.innerHTML = "<p>Unexpected error. Check console.</p>";
+    ResultDiv.innerHTML = "<p>Unexpected error. Check console.</p>";
   }
 }

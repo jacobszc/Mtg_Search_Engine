@@ -172,5 +172,5 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\refint\Demo.dll
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.pdb
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.genruntimeconfig.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\ref\Demo.dll
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-14g7xaj0uo.gz
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\w4drg27qay-mrzcij69w6.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-1kri3svyb9.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\w4drg27qay-qjsx2jba6h.gz

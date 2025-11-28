@@ -29,7 +29,8 @@ namespace MyApp.Namespace
 
         var cards = await _db.CardSet    /// this part if the EF core Linq query where im wrtiting a db query in c# rather than sql
             .Where(c => c.Name.Contains(queryResult))    
-            .OrderBy(c => c.Name)   // so this is sql says SELECT * 
+            .OrderBy(c => c.Name)
+            .Take(3)   // so this is sql says SELECT * 
                                                           //FROM CARDSET 
                                                           // WHERE NAME LIKE <queryResult> 
                                                           // ORDER BY Name Ascending
