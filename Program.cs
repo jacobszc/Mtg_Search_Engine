@@ -9,7 +9,7 @@ using Json.Parser;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<mtgDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MagiccardDb")));
+builder.Services.AddDbContext<mtgDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MagicCardDb")));
 
 builder.Services.AddControllers();
 
@@ -19,7 +19,7 @@ builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-string? filePath = "C:\\Users\\Jacob\\repos\\AllPrintings.json";
+
 
 
 

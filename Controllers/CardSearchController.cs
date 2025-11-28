@@ -20,20 +20,23 @@ namespace MyApp.Namespace
 
 
         [HttpGet("search")]
-    public async Task<ActionResult<IEnumerable<CardSet>>> Search([FromQuery] string queryResult)
+    public async Task<ActionResult<IEnumerable<CardSet>>> Search([FromQuery] string queryResult) //from query attribute is jsut a safety measure
     {
-        if (string.IsNullOrWhiteSpace(queryResult))
+        if (string.IsNullOrWhiteSpace(queryResult)) // if query result is empty, which it wont be if it made it this far, but jut to double check
         {
-            return BadRequest("Query parameter 'queryResult' is required.");
+            return BadRequest("Query parameter 'queryResult' is required."); // return a repsonse obejct with a ok repsonse set to false, and an error message in the body
         }
 
-        var cards = await _db.CardSet
-            .Where(c => c.Name.Contains(queryResult))    // or .Equals(q) if you want exact
-            .OrderBy(c => c.Name)
-                                    // limit so you don’t return thousands
-            .ToListAsync();
+        var cards = await _db.CardSet    /// this part if the EF core Linq query where im wrtiting a db query in c# rather than sql
+            .Where(c => c.Name.Contains(queryResult))    
+            .OrderBy(c => c.Name)   // so this is sql says SELECT * 
+                                                          //FROM CARDSET 
+                                                          // WHERE NAME LIKE <queryResult> 
+                                                          // ORDER BY Name Ascending
+                                    
+            .ToListAsync(); // we need this because the sql will only execture when you ENUMERATE IT, so we must use .Tolist(), count(), foreach... etc..
 
-        return Ok(cards); // will be serialized as JSON
+        return Ok(cards); // will be serialized as JSON, asp.net returns repsonse objects as json by default
     }
 
 
