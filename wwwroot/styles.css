@@ -12,42 +12,77 @@ html {
 body {
   margin: 0;                     /* reset */
   min-height: 100dvh;            /* ensure full-height for background */
-  display: grid;
-  place-items: center;
   padding: 2rem;                 /* replaces the second margin */
   
 }
 
+.centered-content {
+  margin: auto;
+  width: 50%;
+  min-height: 100dvh;
+
+}
+
 h1 {
-  margin: 0 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  
+ 
   color: #111;
 }
 
-.card {
-  background: #fff;
-  padding: 24px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
-  width: min(420px, 92vw);
+.check-box-container {
+  display: flex;
+  flex-direction: column; /* vertical stacking of rows */
+  gap: 6px;
 }
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* space between checkbox and label */
+}
+
+.checkboxes {
+
+ width: 120px;  /* fixed width so labels line up */
+  display: inline-flex;
+  justify-content: flex-start;
+  
+}
+
+
+
+
 
 label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   font-weight: 600;
   color: #333;
 }
+
+.green-checkbox-label  {
+
+  color: green;
+
+
+}
+
+
 
 .row {
   display: flex;
   gap: 10px;
   width: min(640px, 92vw);
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 input[type="text"] {
   flex: 1;
   padding: 12px 14px;
-  border: 1px solid #cfd6e4;
+  border:lab(from color lightness channel_a channel_b alpha);
   border-radius: 10px;
   font-size: 16px;
   outline: none;
@@ -59,9 +94,18 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 4px rgba(107,138,253,.15);
 }
 
+input[type = "checkbox"] {
+   padding: 1px 1px;
+   flex: 1;
+  font-size: 12px;
+  background: #fff;
+  
+
+}
+
 button {
   padding: 12px 16px;
-  border: none;
+  border:lab(from color lightness channel_a channel_b alpha);
   border-radius: 10px;
   background: #6b8afd;
   color: #fff;
@@ -69,7 +113,7 @@ button {
   cursor: pointer;
 }
 
-button:hover { filter: brightness(0.95); }
+button:hover { filter: brightness(1.3); }
 button:active { transform: translateY(1px); }
 
 #result {
@@ -78,13 +122,7 @@ button:active { transform: translateY(1px); }
 
 .not-found { color: #b00020; }
 
-.background {
-  position: relative;
-  background-size: contain;
-  
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-}
+
 
 .slide {
   position: absolute;

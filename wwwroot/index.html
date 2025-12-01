@@ -6,24 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css">
 </head>
-<div class ="background"></div>
-<div class="slide fade1"></div>
-<div class="slide fade2"></div>
-<div class="slide fade3"></div>
-<body>
-  
-    
-    
-  <h1>Enter a card Son!</h1>
 
+
+
+
+<body>
+
+  <!-- this is the background images that fade in and out-->
+
+  
+ <div class="slide fade1"></div>
+ <div class="slide fade2"></div>
+ <div class="slide fade3"></div>
+
+<!-------------------------------------------------->
+
+  
+<!-- this div will be the header and search bar and button that i want permanantly centered-->
+<div class = "centered-content" id>
+
+  <h1>Enter a card Son!</h1>
   <div class="row">
     <input id="InputBar" type="text" placeholder="Enter card name (e.g., Piss baby)" />
     <button id="SearchButton">Search</button>
   </div>
+<!---------------------------------------- end centered content ------------------------------->
+
+   
+  
+ 
+<!-- check boxs sohund be rigth alligned -->
+  <div class="check-box-container"> 
+   
+  <div class="check-row">
+     <label for="checkbox1" class ="green-checkbox-label">green</label>
+     <span class = "checkboxes">
+     <input type="checkbox" id="checkbox-green"> 
+     </span>
+  </div>
+
+  <div class="check-row">
+    <label for="checkbox2" class = "black-checkbox-label">black</label>
+    <span class = checkboxes> 
+    <input type="checkbox" id="checkbox-black">
+    </span>
+  </div>
+
+</div>
+
+
+
+  <!-------------------- end check boxes ------------------>
+
+
+
+
+
 
   <div id="ResultDiv"></div>
 
+   </body>
+
   <script src="js/cardLookup.js"></script>
  
-</body>
+
 </html>
