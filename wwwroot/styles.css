@@ -32,6 +32,7 @@ h1 {
 }
 
 .check-box-container {
+  position:relative;
   display: flex;
   flex-direction: column; /* vertical stacking of rows */
   gap: 6px;
@@ -45,9 +46,10 @@ h1 {
 
 .checkboxes {
 
- width: 120px;  /* fixed width so labels line up */
-  display: inline-flex;
-  justify-content: flex-start;
+ width: min-content;  /* fixed width so labels line up */
+ position: absolute;
+
+left: 50px;
   
 }
 
@@ -64,11 +66,25 @@ label {
 
 .green-checkbox-label  {
 
-  color: green;
+  color: rgb(17, 177, 17);
 
 
 }
 
+.red-checkbox-label {
+
+  color: rgba(255, 0, 0, 0.801);
+}
+
+
+.blue-checkbox-label {
+  color:rgb(0, 119, 255); 
+}
+
+.white-checkbox-label {
+
+  color: antiquewhite;
+}
 
 
 .row {
