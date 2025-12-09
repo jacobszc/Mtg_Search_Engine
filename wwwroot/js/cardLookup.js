@@ -6,7 +6,7 @@ const ResultDiv = document.getElementById('ResultDiv')
 
 
 SearchButton.addEventListener("click", () => {   // add event listener to my button that when cliked, calls a lambda function 
-  
+  const colors = filterColors();
   
   const query = InputBar.value.trim(); // define a query variable to store user input. input.value is the value givent o my input div in my html.
   if (!query) {                     // trim removes the white space and new lines from beginigna nd end of string but not the middle.
@@ -15,13 +15,20 @@ SearchButton.addEventListener("click", () => {   // add event listener to my but
     return; // exit lambda if ther eis no query
   }
 
-  searchCards(query); // in the case there in a valid query enterted, call searchCards
+  searchCards(query, colors); // in the case there in a valid query enterted, call searchCards
 });
 
-async function searchCards(query) { // were calling an async function because inside we can use fetch, and while we wait for the fetch to resolve, the program wont pause
-  try {
+
+
+async function searchCards(query, colors) { // were calling an async function because inside we can use fetch, and while we wait for the fetch to resolve, the program wont pause
+  
     // call your ASP.NET Core API
-    const response = await fetch(`/api/cardsearch/search?queryResult=${encodeURIComponent(query)}`); // ? start the query and qu is the name of the paramter 
+
+    
+    
+    const url = `/api/cardsearch/search?queryResult=${encodeURIComponent(query)}&colors=${encodeURIComponent(colors.join(','))}`;
+    
+    const response = await fetch(url); // ? start the query and qu is the name of the paramter 
        // so the above line says "in a thread, go the the fucntion decorated with the search label in mu controller, it will be named search"
        // and pass the paramter q to that function, and here ${... } is literal interpolation, jsut meaning use the value of whatevers inside as a string
        // finlay encodeuri jsut makes ure the query string doesnt contain any characters that would break the url
@@ -31,7 +38,7 @@ async function searchCards(query) { // were calling an async function because in
       ResultDiv.innerHTML = `<p>Error: ${text}</p>`; // display " ERROR: Query parameter 'queryResult' is required. "
       return;
     }
-
+    
     const cards = await response.json(); // finaly if there was a query entered, and an OK reposnse returned, we make it here, and store the json of the card we requested, and is in the Response object body
 
     if (cards.length === 0) { // if the length of the json list retuned is 0, 
@@ -61,8 +68,5 @@ async function searchCards(query) { // were calling an async function because in
 
       ResultDiv.appendChild(div);
     });
-  } catch (err) {
-    console.error(err);
-    ResultDiv.innerHTML = "<p>Unexpected error. Check console.</p>";
-  }
+  
 }
