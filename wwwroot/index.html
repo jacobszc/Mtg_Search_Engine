@@ -39,39 +39,47 @@
   <div class="check-box-container"> 
 
     <div class="check-row">
-    <label for="checkbox4" class = "white-checkbox-label">white</label>
+    <label for="checkbox-white" class = "white-checkbox-label">white</label>
     <span class = checkboxes> 
     <input type="checkbox" id="checkbox-white">
     </span>
   </div>
 
   <div class="check-row">
-    <label for="checkbox3" class = "blue-checkbox-label">blue</label>
+    <label for="checkbox-blue" class = "blue-checkbox-label">blue</label>
     <span class = checkboxes> 
     <input type="checkbox" id="checkbox-blue">
     </span>
   </div>
 
   <div class="check-row">
-    <label for="checkbox2" class ="black-checkbox-label">black</label>
+    <label for="checkbox-black" class ="black-checkbox-label">black</label>
     <span class = checkboxes> 
     <input type="checkbox" id="checkbox-black">
     </span>
   </div>
 
   <div class="check-row">
-    <label for="checkbox5" class = "red-checkbox-label">red</label>
+    <label for="checkbox-red" class = "red-checkbox-label">red</label>
     <span class = checkboxes> 
     <input type="checkbox" id="checkbox-red">
     </span>
   </div>
 
   <div class="check-row">
-     <label for="checkbox1" class ="green-checkbox-label">green</label>
+     <label for="checkbox-green" class ="green-checkbox-label">green</label>
      <span class = "checkboxes">
      <input type="checkbox" id="checkbox-green"> 
      </span>
   </div>
+
+  <div class="check-row">
+     <label for="checkbox-colorless" class ="colorless-checkbox-label">colorless</label>
+     <span class = "checkboxes">
+     <input type="checkbox" id="checkbox-colorless"> 
+     </span>
+  </div>
+
 
 
 
@@ -85,16 +93,16 @@
   <!---- start dropdown menu for card types-->
 <div class ="dropdown-container">
 
-  <label for="card-types">Card Type</label>
+  <label for="card-type-dropdown" id="dropdown-label">Card Type</label>
 
-  <select name ="card-type" id ="card-type">
-      <option value="artifact">Artifact</option>
-      <option value="instant">Instant</option>
-      <option value="sorcery">Sorcery</option>
-      <option value="enchantment">Enchantment</option>
-      <option value="land">Land</option>
-      <option value="planeswalker">Planes Walker</option>
-      <option value="battle">Battle</option>
+  <select name ="card-type-dropdown"  id ="card-type-dropdown" multiple>
+      <option value="artifact" id="artifact-text">Artifact</option>
+      <option value="instant" id = "instant-text">Instant</option>
+      <option value="sorcery" id="sorcery-text">Sorcery</option>
+      <option value="enchantment" id="enchantment-text">Enchantment</option>
+      <option value="land" id="land-text">Land</option>
+      <option value="planeswalker" id="planeswalker-text">Planes Walker</option>
+      <option value="battle" id ="battle-text">Battle</option>
 
 
   </select>

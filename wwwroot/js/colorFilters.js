@@ -7,7 +7,7 @@ const BlueCheckBox = document.getElementById("checkbox-blue")
 const BlackCheckBox = document.getElementById("checkbox-black")
 const RedCheckBox = document.getElementById("checkbox-red")
 const GreenCheckBox = document.getElementById("checkbox-green")
-
+const ColorlessCheckBox = document.getElementById("checkbox-colorless")
 
 let colorFilter =[];
 
@@ -34,6 +34,11 @@ if(RedCheckBox.checked) {
 
 if(GreenCheckBox.checked) {
     colorFilter.push("G");
+}
+
+if(ColorlessCheckBox.checked){
+
+    colorFilter.push("C")
 }
 
 

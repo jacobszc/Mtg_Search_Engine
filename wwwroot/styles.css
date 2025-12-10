@@ -36,7 +36,7 @@ h1 {
 }
 
 .check-box-container {
-  position:relative;
+  
   display: flex;
   flex-direction: column; /* vertical stacking of rows */
   gap: 6px;
@@ -61,9 +61,70 @@ h1 {
  width: min-content;  /* fixed width so labels line up */
  position: absolute;
 
-left: 50px;
+left: 75px;
   
 }
+
+
+#card-type-dropdown {
+
+  height: 115px;
+
+}
+
+#artifact-text {
+
+  font-family:fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+   
+}
+
+#instant-text {
+
+  font-family: fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+#sorcery-text {
+
+  font-family: fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+
+#enchantment-text {
+
+  font-family: fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+
+#land-text {
+
+  font-family: fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+
+#planeswalker-text {
+
+  font-family: fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+#battle-text {
+
+  font-family: fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
 
 
 
@@ -74,6 +135,11 @@ label {
   margin-bottom: 2px;
   font-weight: 600;
   color: #333;
+}
+
+#dropdown-label {
+
+  text-align: center;
 }
 
 .green-checkbox-label  {
@@ -96,6 +162,10 @@ label {
 .white-checkbox-label {
 
   color: antiquewhite;
+}
+
+.colorless-checkbox-label {
+  color:cadetblue
 }
 
 
@@ -138,7 +208,7 @@ button {
   background: #6b8afd;
   color: #fff;
   font-weight: 600;
-  cursor: pointer;
+  cursor:pointer;
 }
 
 button:hover { filter: brightness(1.3); }

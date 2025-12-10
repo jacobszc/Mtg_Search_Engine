@@ -22,26 +22,27 @@ namespace MyApp.Namespace
 
 
         [HttpGet("search")]
-    public async Task<ActionResult<IEnumerable<CardSet>>> Search(string queryResult, string colors) //from query attribute is jsut a safety measure
+    public async Task<ActionResult<IEnumerable<CardSet>>> Search(string queryResult, string? colors) //from query attribute is jsut a safety measure
     {
         if (string.IsNullOrWhiteSpace(queryResult)) // if query result is empty, which it wont be if it made it this far, but jut to double check
         {
             return BadRequest("Query parameter 'queryResult' is required."); // return a repsonse obejct with a ok repsonse set to false, and an error message in the body
         }
 
-
+       
        
 
-        var cards = await _db.CardSet    /// this part if the EF core Linq query where im wrtiting a db query in c# rather than sql
-            .Where(c => c.Name.Contains(queryResult)) 
-            .Where(d => d.ColorIdentity.Any(color => colors.Contains(color)))  
-            .OrderBy(c => c.Name)
-            .Take(20)   // so this is sql says SELECT * 
-                                                          //FROM CARDSET 
-                                                          // WHERE NAME LIKE <queryResult> 
-                                                          // ORDER BY Name Ascending
-                                    
-            .ToListAsync(); // we need this because the sql will only execture when you ENUMERATE IT, so we must use .Tolist(), count(), foreach... etc..
+        var query = _db.CardSet.Where(c => c.Name.Contains(queryResult));
+
+        if (colors != null && colors.Any())
+        {
+        query = query.Where(d => d.ColorIdentity.Any(color => colors.Contains(color)));
+        }
+
+         var cards = await query
+           .OrderBy(c => c.Name)
+           .Take(20)
+           .ToListAsync(); // we need this because the sql will only execture when you ENUMERATE IT, so we must use .Tolist(), count(), foreach... etc..
 
         return Ok(cards); // will be serialized as JSON, asp.net returns repsonse objects as json by default
     }
