@@ -7,6 +7,7 @@ const ResultDiv = document.getElementById('ResultDiv')
 
 SearchButton.addEventListener("click", () => {   // add event listener to my button that when cliked, calls a lambda function 
   const colors = filterColors();
+  const types = filterTypes();
   
   const query = InputBar.value.trim(); // define a query variable to store user input. input.value is the value givent o my input div in my html.
   if (!query) {                     // trim removes the white space and new lines from beginigna nd end of string but not the middle.
@@ -15,18 +16,18 @@ SearchButton.addEventListener("click", () => {   // add event listener to my but
     return; // exit lambda if ther eis no query
   }
 
-  searchCards(query, colors); // in the case there in a valid query enterted, call searchCards
+  searchCards(query, colors, types); // in the case there in a valid query enterted, call searchCards
 });
 
 
 
-async function searchCards(query, colors) { // were calling an async function because inside we can use fetch, and while we wait for the fetch to resolve, the program wont pause
+async function searchCards(query, colors,types) { // were calling an async function because inside we can use fetch, and while we wait for the fetch to resolve, the program wont pause
   
     // call your ASP.NET Core API
 
     
     
-    const url = `/api/cardsearch/search?queryResult=${encodeURIComponent(query)}&colors=${encodeURIComponent(colors.join(','))}`;
+    const url = `/api/cardsearch/search?queryResult=${encodeURIComponent(query)}&colors=${encodeURIComponent(colors.join(','))}&types=${encodeURIComponent(types.join(','))}`;
     
     const response = await fetch(url); // ? start the query and qu is the name of the paramter 
        // so the above line says "in a thread, go the the fucntion decorated with the search label in mu controller, it will be named search"
