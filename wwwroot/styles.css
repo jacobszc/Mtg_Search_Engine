@@ -72,7 +72,7 @@ left: 75px;
 
 }
 
-#artifact-text {
+#artifact {
 
   font-family:fantasy;
   color:rgb(49, 49, 151);
@@ -80,22 +80,14 @@ left: 75px;
    
 }
 
-#instant-text {
+#instant {
 
   font-family: fantasy;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
 
-#sorcery-text {
-
-  font-family: fantasy;
-  color:rgb(49, 49, 151);
-  text-shadow: 2px 2px 4px #0a0a0a;
-}
-
-
-#enchantment-text {
+#sorcery {
 
   font-family: fantasy;
   color:rgb(49, 49, 151);
@@ -103,7 +95,7 @@ left: 75px;
 }
 
 
-#land-text {
+#enchantment {
 
   font-family: fantasy;
   color:rgb(49, 49, 151);
@@ -111,14 +103,22 @@ left: 75px;
 }
 
 
-#planeswalker-text {
+#land {
 
   font-family: fantasy;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
 
-#battle-text {
+
+#planeswalker {
+
+  font-family: fantasy;
+  color:rgb(49, 49, 151);
+  text-shadow: 2px 2px 4px #0a0a0a;
+}
+
+#battle {
 
   font-family: fantasy;
   color:rgb(49, 49, 151);

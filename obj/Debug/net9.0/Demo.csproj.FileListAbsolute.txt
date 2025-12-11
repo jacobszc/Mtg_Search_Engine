@@ -173,5 +173,6 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.pdb
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.genruntimeconfig.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\ref\Demo.dll
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\jl1dzzv8ng-lz62wg834b.gz
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\i57m81jojb-ilhf0r5jdr.gz
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-op91aw3na8.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-blx14buprl.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\1ssacgonpc-ujdrqdggm9.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\i57m81jojb-buaufnay81.gz
