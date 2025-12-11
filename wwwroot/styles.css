@@ -12,12 +12,12 @@ html {
 body {
   margin: 0;                     /* reset */
   min-height: 100dvh;            /* ensure full-height for background */
-  padding: 2rem;                 /* replaces the second margin */
+                  /* replaces the second margin */
   
 }
 
-.centered-content {
-  position:relative;
+.centered-content {   /* cauto margin center within parent elem body  */
+  
  
   margin: auto;
   width: 50%;
@@ -29,6 +29,7 @@ body {
 
 h1 {
   display: flex;
+  margin:auto;
   justify-content: center;
   
  
@@ -36,7 +37,7 @@ h1 {
 }
 
 .check-box-container {
-  
+  width: 150px;
   display: flex;
   flex-direction: column; /* vertical stacking of rows */
   gap: 6px;
@@ -44,9 +45,11 @@ h1 {
 
 .dropdown-container {
 
-  position:absolute;
+  width:125px;
+  float: right;
+  margin-top: auto;
  
-  left: 500px;
+  
   
 }
 
@@ -74,7 +77,7 @@ left: 75px;
 
 #artifact {
 
-  font-family:fantasy;
+  font-family:monospace;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
    
@@ -82,14 +85,14 @@ left: 75px;
 
 #instant {
 
-  font-family: fantasy;
+  font-family:monospace;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
 
 #sorcery {
 
-  font-family: fantasy;
+  font-family:monospace;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
@@ -97,7 +100,7 @@ left: 75px;
 
 #enchantment {
 
-  font-family: fantasy;
+  font-family:monospace;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
@@ -105,7 +108,7 @@ left: 75px;
 
 #land {
 
-  font-family: fantasy;
+ font-family:monospace;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
@@ -113,14 +116,14 @@ left: 75px;
 
 #planeswalker {
 
-  font-family: fantasy;
+  font-family:monospace;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
 
 #battle {
 
-  font-family: fantasy;
+  font-family:monospace;
   color:rgb(49, 49, 151);
   text-shadow: 2px 2px 4px #0a0a0a;
 }
