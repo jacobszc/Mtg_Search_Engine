@@ -4,10 +4,15 @@ using System.Text.Json;
 using  TestItemNS;
 using Microsoft.Identity.Client;
 using Json.Parser;
+using System.Net.Http;
+
+//static readonly HttpClient client = new HttpClient();
 
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 builder.Services.AddDbContext<mtgDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MagicCardDb")));
 
