@@ -12,7 +12,7 @@ using System.Net.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+builder.Services.AddHttpClient();
 
 builder.Services.AddDbContext<mtgDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MagicCardDb")));
 

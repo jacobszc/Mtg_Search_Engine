@@ -15,15 +15,17 @@ using Microsoft.IdentityModel.Tokens;
 
 public class ImageSearchController : ControllerBase {
 
- public ImageSearchController() {
+  private readonly HttpClient _http;
 
-  
+ public ImageSearchController(HttpClient http) {
+
+  _http = http;
    /// 
 
  }
 
 [HttpGet("imagesearch")]
- public async Task<ActionResult<string>> ImageSearch(string imgQueryResult) {
+ public async Task<IActionResult> ImageSearch(string imgQueryResult) {
 
   if(string.IsNullOrWhiteSpace(imgQueryResult)) {
 
@@ -32,17 +34,35 @@ public class ImageSearchController : ControllerBase {
 
     }
 
-      HttpClient client = new HttpClient(); // make this DI later, should only be instantiated once per application
+    var query = Uri.EscapeDataString(imgQueryResult); // important, see #2
+    var uri = $"https://api.scryfall.com/cards/named?fuzzy={query}";
+    _http.DefaultRequestHeaders.UserAgent.ParseAdd(
+    "MagicCardApp/1.0 (contact: jacobszc@buffalo.edu)"
 
-      string uri = $"https://api.scryfall.com/cards/named?exact={imgQueryResult}";
+);
+    _http.DefaultRequestHeaders.Accept.ParseAdd("application/json");
 
       try
     {
-      using HttpResponseMessage response = await client.GetAsync(uri);
+      using HttpResponseMessage response = await _http.GetAsync(uri);
       response.EnsureSuccessStatusCode();
-      string responseBody = await response.Content.ReadAsStringAsync(); // this should auto dserialzie json into string
+      var responseBody = await response.Content.ReadAsStringAsync();
+
+      var options = new JsonSerializerOptions {
+
+        PropertyNameCaseInsensitive = true
+
+
+      
+      };
+
+      var card= JsonSerializer.Deserialize<ScryfallCard>(responseBody, options) ?? throw new Exception("failed to desericaluize!");
+
+      var imguri = card.ImgUris?.Normal;
+      
+       // this should auto dserialzie json into string
        Console.WriteLine(responseBody);
-       return Ok(responseBody);
+       return Ok(imguri);
     }
      catch(HttpRequestException e)
     {
@@ -59,7 +79,7 @@ public class ImageSearchController : ControllerBase {
 
 
 
-return Ok("connection worked but no img returned");
+   return Ok("whatever");
 
 
 
