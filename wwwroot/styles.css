@@ -25,6 +25,18 @@ body {
 
 }
 
+.filter-row {
+
+  display: flex;
+  gap: 10px;
+  width: min(640px, 92vw);
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+
+
+}
+
 
 
 h1 {
@@ -46,14 +58,15 @@ h1 {
 .dropdown-container {
 
   width:125px;
-  float: right;
-  margin-top: auto;
+  
+  margin-left: auto;
  
   
   
 }
 
 .check-row {
+  position:relative;
   display: flex;
   align-items: center;
   gap: 6px; /* space between checkbox and label */
@@ -172,7 +185,7 @@ label {
 }
 
 
-.row {
+.searchbar-row {
   display: flex;
   gap: 10px;
   width: min(640px, 92vw);
@@ -195,14 +208,6 @@ input[type="text"]:focus {
   box-shadow: 0 0 0 4px rgba(107,138,253,.15);
 }
 
-input[type = "checkbox"] {
-   padding: 1px 1px;
-   flex: 1;
-  font-size: 12px;
-  background: #fff;
-  
-
-}
 
 button {
   padding: 12px 16px;
@@ -219,6 +224,13 @@ button:active { transform: translateY(1px); }
 
 #result {
   margin-top: 1rem;              /* moved from inline style */
+}
+
+#imageResultDiv {
+
+max-width: 150px;
+max-height: 200px;
+
 }
 
 .not-found { color: #b00020; }

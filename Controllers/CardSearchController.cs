@@ -47,7 +47,7 @@ namespace MyApp.Namespace
 
          var cards = await query
            .OrderBy(c => c.Name)
-           .Take(5)
+           .Take(1)
            .ToListAsync(); // we need this because the sql will only execture when you ENUMERATE IT, so we must use .Tolist(), count(), foreach... etc..
 
         return Ok(cards); // will be serialized as JSON, asp.net returns repsonse objects as json by default

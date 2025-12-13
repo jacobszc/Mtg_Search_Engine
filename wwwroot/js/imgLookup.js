@@ -13,7 +13,7 @@ const response = await fetch(url);
 
 const urltoimg = await response.text();
 
-imgResultDiv.innerHTML = `<img src="${urltoimg}" alt="Description of image" style="width:100%;">`;
+imgResultDiv.innerHTML = `<img src="${urltoimg}" alt="Description of image";">`;
 
 
 }
