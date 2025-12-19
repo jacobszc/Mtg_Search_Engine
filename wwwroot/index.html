@@ -25,9 +25,9 @@
 <!-- this div will be the header and search bar and button that i want permanantly centered-->
 <div class = "centered-content" id>
 
-  <h1>Enter a card</h1>
+  
   <div class="searchbar-row">
-    <input id="InputBar" type="text" placeholder="Enter card name (e.g., Saura Tribe Elder)" />
+    <input id="InputBar" type="text" placeholder="Enter card name (e.g., Sakura Tribe Elder)" />
     <button id="SearchButton">Search</button>
   </div>
 
@@ -94,7 +94,7 @@
   <!---- start dropdown menu for card types-->
 <div class ="dropdown-container">
 
-  <label for="card-type-dropdown" id="dropdown-label">Card Type</label>
+  
 
   <select name ="card-type-dropdown"  id ="card-type-dropdown" multiple>
       <option value="artifact" id="artifact">Artifact</option>
@@ -117,14 +117,38 @@
 
 
 
-  <div id="ResultDiv"></div>
+  <div id="ResultDiv">
 
-  <div id="imgResultDiv"></div>
+
+    
+    <div id="imgResultDiv"></div>
+    
+    
+    
+    <template id="card-description-template">
+    <div id ="DescriptionDiv"> 
+     <ul>
+          <li><b>Mana Cost:</li>
+           <li>Color Identity:</li>
+           <li>Type:</li>
+           <li>Power/Toughness:</li>
+           <li>ID:</li>
+         </ul>
+
+    </div>
+    </template>
+    
+  
+  
+  </div>
+
+  
 
    </body>
      
     <script src = "js/typeFilters.js"></script>
    <script src="js/colorFilters.js"></script>
+   <script src = "js/showContent.js"></script>
    <script src="js/searchCards.js"></script>
    <script src = "js/imgLookup.js"></script>
   <script src="js/cardLookup.js"></script>

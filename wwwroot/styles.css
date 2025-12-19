@@ -57,7 +57,8 @@ h1 {
 
 .dropdown-container {
 
-  width:125px;
+  width:150px;
+  height:168px;
   
   margin-left: auto;
  
@@ -84,8 +85,16 @@ left: 75px;
 
 #card-type-dropdown {
 
-  height: 115px;
+  height: 100%;
 
+}
+
+option {
+
+  height: 25px;
+  font-size: 14px ;
+  font-weight: bold;
+  
 }
 
 #artifact {
@@ -153,10 +162,7 @@ label {
   color: #333;
 }
 
-#dropdown-label {
 
-  text-align: center;
-}
 
 .green-checkbox-label  {
 
@@ -222,14 +228,52 @@ button {
 button:hover { filter: brightness(1.3); }
 button:active { transform: translateY(1px); }
 
-#result {
-  margin-top: 1rem;              /* moved from inline style */
+#ResultDiv {
+ position: relative;
+  width : 100%;
+  height: 300px;
+  background-color: #70f107ad;
+  display: flex;
 }
 
-#imageResultDiv {
+#imgResultDiv {
+  justify-self: right;
+background-color: aquamarine;
+width: 200px;
+height:250px;
+border-radius: 8px;
+overflow: hidden; /* IMPORTANT */
+display: flex;
 
-max-width: 150px;
-max-height: 200px;
+
+
+}
+
+#DescriptionDiv {
+  justify-self: left;
+background-color: rgb(255, 127, 202);
+width: 200px;
+height:250px;
+padding:8px;
+border-style: 1px solid black;
+display: flex;
+
+
+}
+
+
+
+
+
+
+
+
+.result-img {
+
+width: 100%;
+height: 100%;
+
+ 
 
 }
 

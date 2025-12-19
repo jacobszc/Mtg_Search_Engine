@@ -13,7 +13,15 @@ const response = await fetch(url);
 
 const urltoimg = await response.text();
 
-imgResultDiv.innerHTML = `<img src="${urltoimg}" alt="Description of image";">`;
+const img = document.createElement("img");
+
+img.src = urltoimg;
+img.alt = "Description of image";
+img.classList.add("result-img");
+
+imgResultDiv.appendChild(img);
+
+/*imgResultDiv.innerHTML = `<img src="${urltoimg}" alt="Description of image" class ="result-img">`;*/
 
 
 }
