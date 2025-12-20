@@ -19,14 +19,14 @@ async function searchCards(query, colors,types) { // were calling an async funct
       return;
     }
     
-    const card = await response.json(); // finaly if there was a query entered, and an OK reposnse returned, we make it here, and store the json of the card we requested, and is in the Response object body
+    const cards = await response.json(); // finaly if there was a query entered, and an OK reposnse returned, we make it here, and store the json of the card we requested, and is in the Response object body
 
-    if (card.length === 0) { // if the length of the json list retuned is 0, 
+    if (cards.length === 0) { // if the length of the json list retuned is 0, 
       ResultDiv.innerHTML = "<p>No cards found.</p>"; //then it was succesful but no cards were found that match the query
       return;
     }
 
-      showContent();
+      showDescription(cards);
 
       
 

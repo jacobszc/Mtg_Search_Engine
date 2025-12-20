@@ -16,7 +16,7 @@ SearchButton.addEventListener("click", () => {   // add event listener to my but
     // the search bar is empty when the ubton is lciked, the empty reult div will now contain the string, PLEASE NETER CARD NAME
     return; // exit lambda if ther eis no query
   }
-  const imgurl = searchImg(query);
+  searchImg(query);
   searchCards(query, colors, types); // in the case there in a valid query enterted, call searchCards
 });
 

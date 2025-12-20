@@ -48,6 +48,7 @@ h1 {
   color: #111111;
 }
 
+
 .check-box-container {
   width: 150px;
   display: flex;
@@ -231,32 +232,38 @@ button:active { transform: translateY(1px); }
 #ResultDiv {
  position: relative;
   width : 100%;
-  height: 300px;
+  height: 100%;
   background-color: #70f107ad;
-  display: flex;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  
 }
 
 #imgResultDiv {
-  justify-self: right;
+
 background-color: aquamarine;
 width: 200px;
 height:250px;
 border-radius: 8px;
-overflow: hidden; /* IMPORTANT */
-display: flex;
+margin-bottom: 10px;
+
+
 
 
 
 }
 
 #DescriptionDiv {
-  justify-self: left;
+
 background-color: rgb(255, 127, 202);
 width: 200px;
 height:250px;
 padding:8px;
 border-style: 1px solid black;
-display: flex;
+margin-bottom: 10px;
+border-radius: 8px;
+
 
 
 }
@@ -276,6 +283,25 @@ height: 100%;
  
 
 }
+
+
+/* #mana-symbol-container {
+
+width:150px;
+height:20px;
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+background-color: chartreuse;
+
+}
+
+.manasymbol {
+
+  height:100%;
+  width: 10px;
+  background-color: #b00020;
+} */
 
 .not-found { color: #b00020; }
 
