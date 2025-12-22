@@ -11,6 +11,10 @@ function showDescription(cards) {
   lis[0].textContent = cards[0].name;  // for now cards is a list of 1
   lis[1].textContent = cards[0].colorIdentity;
   lis[2].textContent = cards[0].manaValue;
+
+  const div = clone.querySelectorAll("div")
+  const manacost = cards[0].manaCost;
+  div[0].appendChild(getManaSymbolDiv(manacost));// add the retuned div of symbols to the result div
   
   
   

@@ -161,14 +161,14 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\scopedcss\bundle\Demo.styles.css
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-1vb011tn8y.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-0s5cm052et.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\w4drg27qay-840e2ykmtj.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\jl1dzzv8ng-lz62wg834b.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\dpj5cei7ov-7ba0s82tpk.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\l9sh7obgf6-seleuvyrbr.gz
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\zckr356v7g-sb8tr3ic4w.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\zckr356v7g-68q4g6s73d.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\1ssacgonpc-fll14dn4e4.gz
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\i57m81jojb-c55dmeda3t.gz
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\i57m81jojb-qqz0s6gzrn.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\staticwebassets.development.json
@@ -179,3 +179,4 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\refint\Demo.dll
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.pdb
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.genruntimeconfig.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\ref\Demo.dll
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\k62lzp96q0-brkwapvln3.gz

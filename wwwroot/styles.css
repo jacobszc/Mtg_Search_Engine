@@ -285,23 +285,23 @@ height: 100%;
 }
 
 
-/* #mana-symbol-container {
+ #mana-symbol-container {
 
 width:150px;
-height:20px;
+height:30px;
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
-background-color: chartreuse;
+background-color: rgb(3, 3, 3);
 
 }
 
-.manasymbol {
+.mana-symbol {
 
-  height:100%;
-  width: 10px;
-  background-color: #b00020;
-} */
+  height:90%;
+  width: 20px;
+  background-color: #f1edee;
+} 
 
 .not-found { color: #b00020; }
 

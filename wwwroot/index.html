@@ -25,6 +25,8 @@
 <!-- this div will be the header and search bar and button that i want permanantly centered-->
 <div class = "centered-content" id>
 
+  <!--<img src="assets/manasymbols/blue.png" alt ="blue symbol" width="50px" height ="50px"> !-->
+
   
   <div class="searchbar-row">
     <input id="InputBar" type="text" placeholder="Enter card name (e.g., Sakura Tribe Elder)" />
@@ -133,6 +135,7 @@
           <li></li>
            <li></li>
            <li></li>
+           <div></div>
          </ul>
 
      
@@ -145,7 +148,25 @@
     
   
   
+  </div> <!-- end result div-->
+  <template id ="mana-symbol-container-template">
+  <div id = "mana-symbol-container">
+
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+     <div class= "mana-symbol"></div>
+
+
+
   </div>
+  </template>
 
   
 
@@ -153,6 +174,7 @@
      
     <script src = "js/typeFilters.js"></script>
    <script src="js/colorFilters.js"></script>
+   <script src ="js/mana-symbols.js"></script>
    <script src = "js/showContent.js"></script>
    <script src="js/searchCards.js"></script>
    <script src = "js/imgLookup.js"></script>
