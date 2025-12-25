@@ -180,3 +180,7 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.pdb
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.genruntimeconfig.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\ref\Demo.dll
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\k62lzp96q0-brkwapvln3.gz
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Client\my-react-app\package-lock.json
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Client\my-react-app\package.json
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\package-lock.json
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\package.json
