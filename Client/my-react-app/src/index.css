@@ -26,10 +26,44 @@ body {
 }
 
 .centered-content {
+  
   background-color: aqua;
   margin: auto;
   width: 50%;
-  min-height: 100dvh;
+  height: 100dvh; /* height spans 100% of the view on the screen*/
+                  /* height must be explicitly defined for child to refence it */
 
 
 }
+
+.searchbar-row {
+   
+  background-color: blueviolet;
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     
+}
+
+#input-bar {
+  
+   
+  height: 25%;
+  width: 50%;
+  border-radius: 10px;
+
+}
+
+#search-button {
+  height:20%;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: #6b88f3;
+  
+
+
+}
+
+
+
