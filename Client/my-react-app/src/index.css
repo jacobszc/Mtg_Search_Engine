@@ -52,6 +52,7 @@ body {
   height: 25%;
   width: 50%;
   border-radius: 10px;
+  
 
 }
 
@@ -59,10 +60,19 @@ body {
   height:20%;
   margin-left: 10px;
   border-radius: 5px;
-  background: #6b88f3;
+  
+  background-color: #a3b6fc;
+  
+  
+  cursor: pointer;
+  background-blend-mode: lighten;
   
 
 
+}
+#search-button:hover {
+
+  filter:brightness(1.3);
 }
 
 
