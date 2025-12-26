@@ -76,4 +76,30 @@ body {
 }
 
 
+/* end search bar and searhc button styles */
 
+
+.check-box-container {
+  width: 150px;
+  display: flex;
+  flex-direction: column; /* vertical stacking of rows */
+  gap: 6px;
+  background-color: chartreuse;
+}
+
+.check-row {
+  
+  background-color: rgb(236, 191, 76);
+  display: flex;
+  padding-left: 10px;
+  gap: 5px;
+  height: 24px
+}
+
+.checkboxes {
+ 
+  width: min-content; 
+ 
+
+
+}
