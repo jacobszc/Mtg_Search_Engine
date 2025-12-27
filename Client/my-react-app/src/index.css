@@ -34,9 +34,11 @@ body {
                   /* height must be explicitly defined for child to refence it */
 
 
+/* search bar and button below */
+                
 }
 
-.searchbar-row {
+#searchbar-row {
    
   background-color: blueviolet;
   width: 100%;
@@ -76,7 +78,7 @@ body {
 }
 
 
-/* end search bar and searhc button styles */
+/* color filter checkbox below */
 
 .filter-row {   /* filter row is the parent of check box container and drop down container */
 
@@ -111,7 +113,7 @@ body {
 
 }
 
-/* ////////////////////////// end checkbox filters */
+/* ////////////////////////// drop down box below */
 
 .dropdown-container {
 
@@ -127,3 +129,37 @@ body {
   height: 100%;
   width:50%;
 }
+
+/*///////// results comp below */
+
+
+#results-div {
+
+  width: 100%;
+  display: flex;
+  height: min(200px, 30dvh);
+  background-color: fuchsia;
+}
+
+#img-div {
+
+  height: 100%;
+  width: 30%;
+  background-color: #a3b6fc;
+  margin-left: 10%;
+
+}
+
+
+#description-div {
+
+  height: 100%;
+   width: 30%;
+   margin-left: auto;
+   background-color: #a3b6fc;
+   margin-right: 10%;
+
+
+}
+
+
