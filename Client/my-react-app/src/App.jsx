@@ -3,7 +3,9 @@ import { useState } from 'react'
 
 import SearchComp from './SearchComp'
 import ColorFilterComp from './ColorFilterComp'
+
 import './App.css'
+
 
 function App() {
   
@@ -15,6 +17,7 @@ function App() {
     
      <SearchComp/>
      <ColorFilterComp />
+
 
 
 

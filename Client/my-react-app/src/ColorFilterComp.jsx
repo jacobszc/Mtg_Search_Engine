@@ -4,6 +4,7 @@ import green from "./assets/manasymbols/green.png";
 import red from "./assets/manasymbols/red.png";
 import white from "./assets/manasymbols/white.png";
 import colorless from "./assets/manasymbols/colorless.png";
+import DropdownComp from './DropDownTypeComp'
 
 function ColorFilterComp() {
 
@@ -58,11 +59,13 @@ function ColorFilterComp() {
      </span>
   </div>
 
- {/* put drop down here*/}
+
 
 
 </div>
-</div>
+
+ <DropdownComp />
+</div> // end filter row
 
 
 
