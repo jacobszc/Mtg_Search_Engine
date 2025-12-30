@@ -1,26 +1,43 @@
-import {useRef, useEffect} from 'react';
-import ImgComp from './ImgComp';
-function ResultComp(props) { // pass the button and 
+import {useRef, useEffect, useState} from 'react';
+import TestImg from "./assets/testcard.png";
+ /// delete below when test done ////
+import blue from "./assets/manasymbols/blue.png";
+import black from "./assets/manasymbols/black.png";
+import green from "./assets/manasymbols/green.png";
+import red from "./assets/manasymbols/red.png";
+import white from "./assets/manasymbols/white.png";
+import colorless from "./assets/manasymbols/colorless.png";
 
-  const inputElement = useRef(); // refence to the div where we want to show the img
-   
-  const focusInput = () => {
 
-     inputElement.current.focus(); /// make the i9mg div the current focus so we can refence it
-  }
-  
 
-    return (
 
-        <div id = "results-div">
+function ResultComp(props) { 
+
+  //const [ImagesList, updateImagesList] = useState([]);
+
+
+  const ImagesList = [blue, black, red, green, white, colorless];
+
+
+
+ return (
+
+       
+       <div id = "results-div">
+
+        {ImagesList.map(image =>
+          <img key={image} src = {image} alt = "blank img" className ="card-img"/>
+        
+        
+        )}
+
+
+        
 
           
-
-         
          
 
-
-        </div>
+      </div>
 
 
     )

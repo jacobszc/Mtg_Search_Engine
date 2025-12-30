@@ -3,9 +3,12 @@ import SearchComp from './SearchComp'
 import ColorFilterComp from './ColorFilterComp'
 import './App.css'
 import ResultsComp from'./ResultsComp'
+import TestImg from "./assets/testcard.png";
 
 
 function App() {
+
+  const[assetPath, setAssetPath] = useState(""); 
   
 
   return  (
@@ -15,7 +18,7 @@ function App() {
     
      <SearchComp/>
      <ColorFilterComp />
-     <ResultsComp />
+     <ResultsComp url = {TestImg}/>
 
 
 
