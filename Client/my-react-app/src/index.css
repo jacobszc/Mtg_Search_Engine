@@ -38,25 +38,40 @@ body {
                 
 }
 
-#searchbar-row {
-   
-  background-color: blueviolet;
+
+#input-wrapper {
+  height: 10%;               /* % heights are unreliable here */
   width: 100%;
-  height: 15%;
+  background-color: hotpink;
   display: flex;
-  justify-content: center; /* horizontal */
-  align-items: center;     
+  align-items: center;         /* vertical centering */
+  justify-content: center;
+  gap: 12px;
 }
 
-#input-bar {
-  
-   
-  height: 25%;
+#input-wrapper input {
   width: 50%;
-  border-radius: 10px;
-  
+  height: 25px;
+  border-radius: 5px;
 
+  padding-left: 40px;          /* 👈 space for the icon */
+
+  background-image: url("./assets/mag-glass.png");
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 18px 18px;
 }
+
+
+
+
+#input-wrapper button {
+  justify-self: center;
+  align-self: center;
+  margin-left: 0;
+}
+
+
 
 #search-button {
   height:20%;

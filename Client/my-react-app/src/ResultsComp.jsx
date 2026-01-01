@@ -11,17 +11,18 @@ import colorless from "./assets/manasymbols/colorless.png";
 
 
 
-function ResultComp(props) { 
+function ResultComp({resultImgList, setResultImgList}) { 
 
-  const temp = [red, green]; 
-  const para = <p value = {temp} onChange = {handleChange}></p>
+ 
+ 
+ 
 
-  const [Images, setImages] = useState(temp); // images in an initialy empty array
+  const ListItems = resultImgList.map(url => <img key ={url} src = {url} alt = "blank" className ="card-img"/>)
+ 
 
-  function handleChange(e) {
+  
 
-    setImages(prev => [...prev,url])
-  }
+  
 
 
 
@@ -33,12 +34,8 @@ function ResultComp(props) {
        
        <div id = "results-div">
 
-        {Images.map(image => <img key={image} src = {Images} alt = "blank img" className ="card-img"/>
         
-        
-        )}
-
-
+        {ListItems}
         
 
           
