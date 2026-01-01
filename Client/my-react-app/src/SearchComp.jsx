@@ -1,11 +1,12 @@
-import {forwardRef, useRef, useState } from "react";
-import TestImg from "./assets/testcard.png";
+import { useState } from "react";
+import TestImg from "/assets/testcard.png";
 import ResultComp from "./ResultsComp";
-import magglass from "./assets/mag-glass.png" ;
 
 
 
-function SearchComp({resultImgList, setResultImgList}) {
+
+
+function SearchComp({setResultImgList}) {
   
     const[input, setInput] = useState("");
     
@@ -29,6 +30,7 @@ function SearchComp({resultImgList, setResultImgList}) {
     />
 
   <button id="search-button" onClick = {()=> setResultImgList(prev => [...prev, input])}> 
+    {/* need () => otherwise react wil call setResultImgList immediatly and assin the return to the button  */}
         click 
     </button>
 

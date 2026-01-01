@@ -1,9 +1,9 @@
-import blue from "./assets/manasymbols/blue.png";
-import black from "./assets/manasymbols/black.png";
-import green from "./assets/manasymbols/green.png";
-import red from "./assets/manasymbols/red.png";
-import white from "./assets/manasymbols/white.png";
-import colorless from "./assets/manasymbols/colorless.png";
+import blue from "/assets/manasymbols/blue.png";
+import black from "/assets/manasymbols/black.png";
+import green from "/assets/manasymbols/green.png";
+import red from "/assets/manasymbols/red.png";
+import white from "/assets/manasymbols/white.png";
+import colorless from "/assets/manasymbols/colorless.png";
 import DropdownComp from './DropDownTypeComp'
 
 function ColorFilterComp() {
