@@ -13,56 +13,177 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  margin: 0;
+  height: 100%;
 }
 
 body {
-  margin: 0;
+  margin: 0;                     /* reset */
+  min-height: 100dvh;            /* ensure full-height for background */
+                  /* replaces the second margin */
+  
+}
+
+.centered-content {
+  
+  background-color: aqua;
+  margin: auto;
+  width: 50%;
+  height: 100dvh; /* height spans 100% of the view on the screen*/
+                  /* height must be explicitly defined for child to refence it */
+
+
+/* search bar and button below */
+                
+}
+
+
+#input-wrapper {
+  height: 10%;               /* % heights are unreliable here */
+  width: 100%;
+  background-color: hotpink;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;         /* vertical centering */
+  justify-content: center;
+  gap: 12px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#input-wrapper input {
+  width: 50%;
+  height: 25px;
+  border-radius: 5px;
+
+  padding-left: 40px;          /* 👈 space for the icon */
+
+  background-image: url("./assets/mag-glass.png");
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 18px 18px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+
+
+
+#input-wrapper button {
+  justify-self: center;
+  align-self: center;
+  margin-left: 0;
+}
+
+
+
+#search-button {
+  height:20%;
+  margin-left: 10px;
+  border-radius: 5px;
+  
+  background-color: #a3b6fc;
+  
+  
   cursor: pointer;
-  transition: border-color 0.25s;
+  background-blend-mode: lighten;
+  
+
+
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#search-button:hover {
+
+  filter:brightness(1.3);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+/* color filter checkbox below */
+
+.filter-row {   /* filter row is the parent of check box container and drop down container */
+
+  display: flex;
+
 }
+
+
+.check-box-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column; /* vertical stacking of rows */
+  gap: 6px;
+  background-color: chartreuse;
+  
+}
+
+.check-row {
+  
+  background-color: rgb(236, 191, 76);
+  display: flex;
+  padding-left: 10px;
+  gap: 5px;
+  height: 24px
+}
+
+.checkboxes {
+ 
+  width: min-content; 
+ 
+
+
+}
+
+/* ////////////////////////// drop down box below */
+
+.dropdown-container {
+
+ 
+  height: 200px;
+  background-color: darkkhaki;
+  width:50%;
+  
+}
+
+#card-type-dropdown {
+
+  height: 100%;
+  width:50%;
+}
+
+/*///////// results comp below */
+
+
+#results-div {
+  
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  height: min(200px, 30dvh);
+  background-color: fuchsia;
+}
+
+#img-div {
+
+  height: 100%;
+  width: 30%;
+  background-color: #a3b6fc;
+  margin-left: 10%;
+
+}
+
+
+#description-div {
+
+  height: 100%;
+   width: 30%;
+   margin-left: auto;
+   background-color: #a3b6fc;
+   margin-right: 10%;
+
+
+}
+
+.card-img {
+ 
+   width: 40%;
+   height: 100%;
+  margin-left: 5%;
+  border-radius: 7%;
+}
+
+

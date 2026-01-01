@@ -161,7 +161,6 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\scopedcss\bundle\Demo.styles.css
-C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-0s5cm052et.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\w4drg27qay-840e2ykmtj.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\jl1dzzv8ng-lz62wg834b.gz
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\dpj5cei7ov-7ba0s82tpk.gz
@@ -180,3 +179,8 @@ C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.pdb
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\Demo.genruntimeconfig.cache
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\ref\Demo.dll
 C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\k62lzp96q0-brkwapvln3.gz
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Client\my-react-app\package-lock.json
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Client\my-react-app\package.json
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\package-lock.json
+C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\package.json
+C:\Users\Jacob\repos\Demo\obj\Debug\net9.0\compressed\fpw8lihpzd-afiztjffwt.gz
