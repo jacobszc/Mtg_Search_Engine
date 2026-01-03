@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TestImg from "/assets/testcard.png";
 import ResultComp from "./ResultsComp";
 
@@ -14,24 +14,12 @@ function SearchComp({urltoImg, seturltoImg }) {
 
  
  const [input, setInput] = useState("");  /// dynamcily keep track of user inpuit
- const [dataIsLoaded, setdataIsLoaded ] = useState(false); // stsae machine to update if the data was fecthed proplety
+  // stsae machine to update if the data was fecthed proplety
  
  
  
   
-   useEffect( () =>{
-    fetch(urltoImg)
-    .then((response)=> response.text()) // response is an unroslved promise to some text
-    .then((text) => {
-       seturltoImg(text);
-      setdataIsLoaded(true);
-     
-
-    });
-
-   
   
-  }, [urltoImg, seturltoImg]); // pass url as a depeendecy. use effect will get called every time url changes
   
   
     
@@ -54,7 +42,7 @@ function SearchComp({urltoImg, seturltoImg }) {
         onChange = {(e)=> setInput(e.target.value)}
     />
 
-  <button id="search-button" onClick = {()=> seturltoImg(`https://localhost:5221/api/imagesearch/imagesearch?imgQueryResult=${input}`)}> 
+  <button id="search-button" onClick = {()=> seturltoImg(`http://localhost:5221/api/imagesearch/imagesearch?imgQueryResult=${input}`)}> 
     {/* need () => otherwise react wil call setResultImgList immediatly and assin the return to the button  */}
         click 
     </button>

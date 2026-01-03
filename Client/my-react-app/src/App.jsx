@@ -8,10 +8,10 @@ import ResultsComp from'./ResultsComp'
 
 function App() {
 
- 
+ const [display, setDisplay] = useState(true);
   
   
-  const [urltoImg, seturltoImg] = useState("")
+  const [urltoImg, seturltoImg] = useState('')
 
  
  
@@ -20,9 +20,11 @@ function App() {
    
     <div class = "centered-content">
 
-     <SearchComp urltoImg={urltoImg} seturltoImg={seturltoImg}/>
+    <SearchComp urltoImg={urltoImg} seturltoImg={seturltoImg}/>
+     
      <ColorFilterComp />
-     <ResultsComp urltoImg={urltoImg} />
+     
+     {display && <ResultsComp urltoImg={urltoImg} seturltoImg={seturltoImg} />}
 
 
 
