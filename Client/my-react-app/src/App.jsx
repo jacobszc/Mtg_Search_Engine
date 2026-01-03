@@ -11,7 +11,7 @@ function App() {
  
   
   
-  const [resultImgList, setResultImgList] = useState([]);
+  const [urltoImg, seturltoImg] = useState("")
 
  
  
@@ -20,9 +20,9 @@ function App() {
    
     <div class = "centered-content">
 
-     <SearchComp  setResultImgList = {setResultImgList}/>
+     <SearchComp urltoImg={urltoImg} seturltoImg={seturltoImg}/>
      <ColorFilterComp />
-     <ResultsComp resultImgList = {resultImgList} />
+     <ResultsComp urltoImg={urltoImg} />
 
 
 

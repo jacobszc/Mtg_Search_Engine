@@ -7,12 +7,12 @@ import ResultComp from "./ResultsComp";
 
 
 
-function SearchComp() {
+function SearchComp({urltoImg, seturltoImg }) {
 
   
  
 
- const [urltoImg, seturlToImg] = useState("")
+ 
  const [input, setInput] = useState("");  /// dynamcily keep track of user inpuit
  const [dataIsLoaded, setdataIsLoaded ] = useState(false); // stsae machine to update if the data was fecthed proplety
  
@@ -23,7 +23,7 @@ function SearchComp() {
     fetch(urltoImg)
     .then((response)=> response.text()) // response is an unroslved promise to some text
     .then((text) => {
-       seturlToImg(text);
+       seturltoImg(text);
       setdataIsLoaded(true);
      
 
@@ -31,14 +31,9 @@ function SearchComp() {
 
    
   
-  }, [urltoImg]); // pass url as a depeendecy. use effect will get called every time url changes
+  }, [urltoImg, seturltoImg]); // pass url as a depeendecy. use effect will get called every time url changes
   
-  if(!dataIsLoaded) {
-    return (
-
-      <div> <h1>Please wait some time....</h1></div>
-
-     )} // end if check for loading data
+  
     
 
     
@@ -59,7 +54,7 @@ function SearchComp() {
         onChange = {(e)=> setInput(e.target.value)}
     />
 
-  <button id="search-button" onClick = {()=> seturlToImg(`/api/imagesearch/imagesearch?imgQueryResult=${encodeURIComponent({input})}`)}> 
+  <button id="search-button" onClick = {()=> seturltoImg(`https://localhost:5221/api/imagesearch/imagesearch?imgQueryResult=${input}`)}> 
     {/* need () => otherwise react wil call setResultImgList immediatly and assin the return to the button  */}
         click 
     </button>

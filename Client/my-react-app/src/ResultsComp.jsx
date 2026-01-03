@@ -5,13 +5,13 @@ import TestImg from "/assets/testcard.png";
 
 
 
-function ResultComp({resultImgList}) { 
+function ResultComp({urltoImg}) { 
 
  /// resultImgList should be list of 
 
  
 
-  const ListItems = resultImgList.map((url) => <img key = "url" src = {url} alt = "blank" className ="card-img"/>)
+  //const ListItems = urltoImg.map((url) => <img key = "url" src = {url} alt = "blank" className ="card-img"/>)
  
 
   
@@ -29,7 +29,7 @@ function ResultComp({resultImgList}) {
        <div id = "results-div">
 
         
-        {ListItems}
+        <img src = {urltoImg} alt = "blank" className ="card-img"/>
         
 
           
