@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "chat.js": "^1.0.2",
     "next.js": "^1.0.3"
   },
   "devDependencies": {

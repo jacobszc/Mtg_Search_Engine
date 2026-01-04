@@ -21,6 +21,16 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 //builder.Services.AddSingleton<MtgJsonDeserializer>(new MtgJsonDeserializer("C:\\Users\\Jacob\\repos\\AllPrintings.json"));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevCors", policy =>
+    {
+        policy.WithOrigins("http://localhost:5173")
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -58,6 +68,8 @@ if (app.Environment.IsDevelopment())
 // });
 
 app.UseAuthorization();
+
+app.UseCors("DevCors");
 
 app.MapControllers();
 

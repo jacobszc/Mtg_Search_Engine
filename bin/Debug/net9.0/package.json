@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "chat.js": "^1.0.2",
     "next.js": "^1.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.5.0"
   }
 }

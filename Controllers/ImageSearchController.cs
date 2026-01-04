@@ -34,7 +34,7 @@ public class ImageSearchController : ControllerBase {
 
     }
 
-    var query = Uri.EscapeDataString(imgQueryResult); // important, see #2
+    var query = Uri.EscapeDataString(imgQueryResult); 
     var uri = $"https://api.scryfall.com/cards/named?fuzzy={query}";
     _http.DefaultRequestHeaders.UserAgent.ParseAdd(
     "MagicCardApp/1.0 (contact: jacobszc@buffalo.edu)"
