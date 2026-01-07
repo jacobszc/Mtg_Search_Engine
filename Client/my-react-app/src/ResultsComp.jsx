@@ -1,64 +1,33 @@
-import { useState, useEffect } from "react";
+
 import TestImg from "/assets/testcard.png";
  /// delete below when test done ////
 
 
 
 
-function ResultComp({urltoImg, seturltoImg}) { 
+function ResultsComp({ScryFallUrl, loading, error }) { 
 
  /// resultImgList should be list of 
-const [dataIsLoaded, setdataIsLoaded ] = useState(false);
+
+ if (loading) return <div>Loading…</div>;
+  if (error) return <div style={{ color: "crimson" }}>{error}</div>;
+  if (!ScryFallUrl) return <div>No image yet</div>;
+
  
 
-  //const ListItems = urltoImg.map((url) => <img key = "url" src = {url} alt = "blank" className ="card-img"/>)
+
  
- useEffect(() =>{
 
-   
+   return (
 
-  // only fetch if it's your backend route, not a direct https image url
-  console.log("fetching:", urltoImg);
-     fetch(urltoImg)
-    .then((response)=> response.text()) // response is an unroslved promise to some text
-     .then((text) => {
-       seturltoImg(text);
-       setdataIsLoaded(true);
-       console.log("mounted...")});
-
+   <div id = "results-div">
+      
+       { (ScryFallUrl) ? <img src = {ScryFallUrl} alt = "blank" className ="card-img"/> :  <pre>No cards loaded...</pre>   }
     
-
-    return () => {
-        console.log("unmounted...")
-
-    }
-
-    }); // pass url as a depeendecy. use effect will get called every time url changes
-  
-
-   
+    </div>
 
 
-
-
- return (
-
-  
-
-       
-       <div id = "results-div">
-
-        
-        <img src = {urltoImg} alt = "blank" className ="card-img"/>
-        
-
-          
-         
-
-      </div>
-
-
-    )
+       )
 }
 
-export default ResultComp;
+export default ResultsComp;

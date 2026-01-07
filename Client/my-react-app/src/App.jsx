@@ -7,11 +7,16 @@ import ResultsComp from'./ResultsComp'
 
 
 function App() {
+  
 
- const [display, setDisplay] = useState(true);
+const [ScryFallUrl, setScryFallUrl] = useState(null);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState(null);
+//const [backEndApiUrl, setBackEndApiUrl] = useState("http://localhost:5221/api/imagesearch/imagesearch?imgQueryResult=");
+
   
   
-  const [urltoImg, seturltoImg] = useState('')
+
 
  
  
@@ -20,11 +25,11 @@ function App() {
    
     <div class = "centered-content">
 
-    <SearchComp urltoImg={urltoImg} seturltoImg={seturltoImg}/>
+    <SearchComp  ScryFallUrl = {ScryFallUrl} setScryFallUrl = {setScryFallUrl} setLoading ={setLoading} setError = {setError} />
      
-     <ColorFilterComp />
+    <ColorFilterComp />
      
-     {display && <ResultsComp urltoImg={urltoImg} seturltoImg={seturltoImg} />}
+    <ResultsComp ScryFallUrl = {ScryFallUrl} error={error} loading = {loading}/>
 
 
 
