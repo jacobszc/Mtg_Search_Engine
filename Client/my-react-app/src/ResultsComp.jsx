@@ -20,12 +20,20 @@ function ResultsComp({ScryFallUrl, loading, error }) {
 
    return (
 
-   <div id = "results-div">
-      
-       { (ScryFallUrl) ? <img src = {ScryFallUrl} alt = "blank" className ="card-img"/> :  <pre>No cards loaded...</pre>   }
-    
-    </div>
-
+   <div id="results-div">
+  {ScryFallUrl.length === 0 ? (
+    <pre>No cards loaded...</pre>
+  ) : (
+    ScryFallUrl.map((url, index) => (
+      <img
+        key={index}
+        src={url}
+        alt="card"
+        className="card-img"
+      />
+    ))
+  )}
+</div>
 
        )
 }

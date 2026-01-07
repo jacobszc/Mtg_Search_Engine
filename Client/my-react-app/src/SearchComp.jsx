@@ -44,8 +44,8 @@ useEffect(() => {
         // choose ONE:
          
          const resolved = await res.text(); // if your API returns plain text URL
-        setScryFallUrl(resolved);
-        if (!ignore) setScryFallUrl(resolved);
+        
+        if (!ignore) setScryFallUrl(prev => [...prev, resolved]);
       } catch (e) {
         if (!ignore) setError(e.message ?? String(e));
       } finally {
