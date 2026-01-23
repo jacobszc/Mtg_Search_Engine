@@ -156,36 +156,36 @@ pre {
 #results-div {
   
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+   display: flex; 
+   flex-wrap: grid; 
   height: min(200px, 30dvh);
   background-color: fuchsia;
 }
 
-#img-div {
+#image-half {
 
   height: 100%;
-  width: 30%;
-  background-color: #a3b6fc;
-  margin-left: 10%;
+  width: 50%;
+  background-color: #dafca3;
+  
 
 }
 
 
-#description-div {
+#description-half {
 
   height: 100%;
-   width: 30%;
-   margin-left: auto;
+   width: 50%;
+  
    background-color: #a3b6fc;
-   margin-right: 10%;
+  
 
 
 }
 
 .card-img {
  
-   width: 40%;
+   width: 80%;
    height: 100%;
   margin-left: 5%;
   border-radius: 7%;

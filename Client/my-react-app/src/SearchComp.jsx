@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react";
 import TestImg from "/assets/testcard.png";
 import ResultsComp from "./ResultsComp";
-import FetchScryFallImg from "./ApiFetch"
+import fetchImage from "./fetchImage.js"
 
 
 // we want searht oonly be resposible for proceesing the input and passing it to a sister compoent for appending and fetching
@@ -32,26 +32,26 @@ useEffect(() => {
     if (!SubmittedCardName) return;
 
     let ignore = false; // prevents setting state after unmount / stale fetch
+     
+   fetchImage(SubmittedCardName).then(resolved => {
 
-    (async () => {
+    if (!ignore) setScryFallUrl(prev => [...prev, resolved]);
+  
+
+   });
+      
       try {
         setLoading(true);
         setError(null);
 
-        const res = await fetch(`http://localhost:5221/api/imagesearch/imagesearch?imgQueryResult=${encodeURIComponent(SubmittedCardName)}`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-
-        // choose ONE:
-         
-         const resolved = await res.text(); // if your API returns plain text URL
         
-        if (!ignore) setScryFallUrl(prev => [...prev, resolved]);
+        
       } catch (e) {
         if (!ignore) setError(e.message ?? String(e));
       } finally {
         if (!ignore) setLoading(false);
       }
-    })();
+    ;
 
     return () => { ignore = true; };
   }, [SubmittedCardName]);

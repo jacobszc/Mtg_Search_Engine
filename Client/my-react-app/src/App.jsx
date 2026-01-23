@@ -6,10 +6,12 @@ import ResultsComp from'./ResultsComp'
 
 
 
+
 function App() {
   
 
 const [ScryFallUrl, setScryFallUrl] = useState([]);
+const [backEndApiUrl, setBackEndApiUrl ] = useState([]);
 const [loading, setLoading] = useState(false);
 const [error, setError] = useState(null);
 //const [backEndApiUrl, setBackEndApiUrl] = useState("http://localhost:5221/api/imagesearch/imagesearch?imgQueryResult=");

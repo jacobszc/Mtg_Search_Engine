@@ -21,6 +21,7 @@ function ResultsComp({ScryFallUrl, loading, error }) {
    return (
 
    <div id="results-div">
+    <div id = "image-half">
   {ScryFallUrl.length === 0 ? (
     <pre>No cards loaded...</pre>
   ) : (
@@ -33,6 +34,8 @@ function ResultsComp({ScryFallUrl, loading, error }) {
       />
     ))
   )}
+</div>
+<div id= "description-half"></div>
 </div>
 
        )
