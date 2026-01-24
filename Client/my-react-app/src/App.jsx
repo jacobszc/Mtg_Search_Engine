@@ -12,8 +12,7 @@ function App() {
 
 const [ScryFallUrl, setScryFallUrl] = useState([]);
 const [backEndApiUrl, setBackEndApiUrl ] = useState([]);
-const [loading, setLoading] = useState(false);
-const [error, setError] = useState(null);
+const [CardDescriptions, setCardDescriptions] = useState([]);
 //const [backEndApiUrl, setBackEndApiUrl] = useState("http://localhost:5221/api/imagesearch/imagesearch?imgQueryResult=");
 
   
@@ -27,11 +26,11 @@ const [error, setError] = useState(null);
    
     <div class = "centered-content">
 
-    <SearchComp  ScryFallUrl = {ScryFallUrl} setScryFallUrl = {setScryFallUrl} setLoading ={setLoading} setError = {setError} />
+    <SearchComp  ScryFallUrl = {ScryFallUrl} setScryFallUrl = {setScryFallUrl} CardDescriptions={CardDescriptions}  setCardDescriptions = {setCardDescriptions} />
      
     <ColorFilterComp />
      
-    <ResultsComp ScryFallUrl = {ScryFallUrl} error={error} loading = {loading}/>
+    <ResultsComp ScryFallUrl = {ScryFallUrl} CardDescriptions = {CardDescriptions} />
 
 
 

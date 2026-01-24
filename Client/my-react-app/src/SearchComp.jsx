@@ -1,17 +1,18 @@
 import {useState, useEffect} from "react";
 import TestImg from "/assets/testcard.png";
 import ResultsComp from "./ResultsComp";
-import fetchImage from "./fetchImage.js"
+import {fetchImage, fetchDescription } from "./FetchContent";
 
 
 // we want searht oonly be resposible for proceesing the input and passing it to a sister compoent for appending and fetching
 
 
 
-function SearchComp({ScryFallUrl, setScryFallUrl, setLoading ,setError }) {
+function SearchComp({ScryFallUrl, setScryFallUrl, CardDescriptions, setCardDescriptions }) {
 
 const [Input, setInput] = useState("");
 const [SubmittedCardName, setSubmittedCardName] = useState(null);
+
 
 
 console.log("search comp entered and Scryfallurl is...: " , {ScryFallUrl})
@@ -33,27 +34,30 @@ useEffect(() => {
 
     let ignore = false; // prevents setting state after unmount / stale fetch
      
-   fetchImage(SubmittedCardName).then(resolved => {
+   fetchDescription(SubmittedCardName).then(resolved => {
+
+   if(!ignore) { setCardDescriptions(prev => [...prev, resolved])}
+
+    
+
+   })
+   
+   
+    fetchImage(SubmittedCardName).then(resolved => {
 
     if (!ignore) setScryFallUrl(prev => [...prev, resolved]);
   
 
    });
+
+
+   
       
-      try {
-        setLoading(true);
-        setError(null);
+      
 
-        
-        
-      } catch (e) {
-        if (!ignore) setError(e.message ?? String(e));
-      } finally {
-        if (!ignore) setLoading(false);
-      }
-    ;
-
-    return () => { ignore = true; };
+    return () =>  ignore = true; 
+  
+  
   }, [SubmittedCardName]);
 
   return (

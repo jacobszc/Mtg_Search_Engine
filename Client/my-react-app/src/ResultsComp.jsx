@@ -1,19 +1,21 @@
 
 import TestImg from "/assets/testcard.png";
- /// delete below when test done ////
 
 
 
 
-function ResultsComp({ScryFallUrl, loading, error }) { 
 
- /// resultImgList should be list of 
+function ResultsComp({ScryFallUrl , CardDescriptions }) { 
 
- if (loading) return <div>Loading…</div>;
-  if (error) return <div style={{ color: "crimson" }}>{error}</div>;
+  console.log(CardDescriptions.map(card => card.name));
+
+  //console.log(CardDescriptions.name)
+
+ 
   if (!ScryFallUrl) return <div>No image yet</div>;
 
  
+  const CardDescriptionList = CardDescriptions.map((description) => <li key = {description.uuid}>{description.name}</li>)
 
 
  
@@ -35,7 +37,13 @@ function ResultsComp({ScryFallUrl, loading, error }) {
     ))
   )}
 </div>
-<div id= "description-half"></div>
+<div id= "description-half">
+  
+
+ {CardDescriptions.length === 0  ? (<pre>No Descritions Avalible</pre>) : ( <ul>{CardDescriptionList}</ul>)}
+  
+
+</div>
 </div>
 
        )
