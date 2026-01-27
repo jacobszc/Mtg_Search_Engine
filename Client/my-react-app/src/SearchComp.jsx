@@ -8,7 +8,7 @@ import {fetchImage, fetchDescription } from "./FetchContent";
 
 
 
-function SearchComp({ScryFallUrl, setScryFallUrl, CardDescriptions, setCardDescriptions }) {
+function SearchComp({ScryFallUrl, setScryFallUrl, setCardDescriptions }) {
 
 const [Input, setInput] = useState("");
 const [SubmittedCardName, setSubmittedCardName] = useState(null);

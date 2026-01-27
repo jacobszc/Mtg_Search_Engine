@@ -1,21 +1,19 @@
 
-import TestImg from "/assets/testcard.png";
-
 
 
 
 
 function ResultsComp({ScryFallUrl , CardDescriptions }) { 
 
-  console.log(CardDescriptions.map(card => card.name));
+  //console.log(CardDescriptions.map(card => card.name));
 
-  //console.log(CardDescriptions.name)
+  console.log("results comp" ,CardDescriptions)
 
  
   if (!ScryFallUrl) return <div>No image yet</div>;
 
  
-  const CardDescriptionList = CardDescriptions.map((description) => <li key = {description.uuid}>{description.name}</li>)
+  const CardDescriptionList = CardDescriptions.map((description) => <li key = {description[0].uuid}>{description[0].name}</li>)
 
 
  
