@@ -36,7 +36,9 @@ useEffect(() => {
      
    fetchDescription(SubmittedCardName).then(resolved => {
 
-   if(!ignore) { setCardDescriptions(prev => [...prev, resolved])}
+    
+
+   if(resolved.length !== 0 && !ignore ) {setCardDescriptions(prev => [...prev, resolved])}
 
     
 
