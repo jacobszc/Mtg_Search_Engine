@@ -172,16 +172,7 @@ pre {
 }
 
 
-#description-half {
 
-  height: 100%;
-   width: 50%;
-  
-   background-color: #a3b6fc;
-  
-
-
-}
 
 .card-img {
  
@@ -189,6 +180,21 @@ pre {
    height: 100%;
   margin-left: 5%;
   border-radius: 7%;
+}
+
+#hover-box {
+   width: 100px;
+   height: 100px;
+
+
+  background-color: dodgerblue;
+}
+
+#slide-container {
+
+  background-color: cornsilk;
+  min-height: 100dvh;
+  width: 100%;
 }
 
 

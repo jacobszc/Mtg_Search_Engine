@@ -3,6 +3,7 @@ import SearchComp from './SearchComp'
 import ColorFilterComp from './ColorFilterComp'
 import './App.css'
 import ResultsComp from'./ResultsComp'
+import BackgroundComp from './BackgroundComp'
 
 
 
@@ -26,8 +27,14 @@ console.log("this is in app" , CardDescriptions)
  
 
   return  (
+    
+
+       <BackgroundComp>
+    
    
     <div class = "centered-content">
+
+   
 
     <SearchComp  ScryFallUrl = {ScryFallUrl} setScryFallUrl = {setScryFallUrl}  setCardDescriptions = {setCardDescriptions} />
      
@@ -37,7 +44,11 @@ console.log("this is in app" , CardDescriptions)
 
 
 
-    </div>  
+    </div> 
+
+    </BackgroundComp>
+
+    
 
     
   )
