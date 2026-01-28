@@ -29,10 +29,12 @@ console.log("this is in app" , CardDescriptions)
   return  (
     
 
-       <BackgroundComp>
-    
+       
+    <div className ="background">
+
+      <BackgroundComp/>
    
-    <div class = "centered-content">
+    <div className = "centered-content">
 
    
 
@@ -46,8 +48,8 @@ console.log("this is in app" , CardDescriptions)
 
     </div> 
 
-    </BackgroundComp>
-
+    
+  </div>
     
 
     

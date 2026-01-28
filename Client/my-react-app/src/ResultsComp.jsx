@@ -26,7 +26,7 @@ function ResultsComp({ScryFallUrl , CardDescriptions }) {
     
   
     
-    <div id = "image-half">
+   
   {ScryFallUrl.length === 0 ? (
     <pre>No cards loaded...</pre>
   ) : (
@@ -41,7 +41,7 @@ function ResultsComp({ScryFallUrl , CardDescriptions }) {
       />
     ))
   )}
-</div>
+
 
 {Hovered && (
   <div classname = "hover-box">
