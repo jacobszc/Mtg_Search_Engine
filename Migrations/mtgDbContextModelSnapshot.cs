@@ -95,11 +95,8 @@ namespace Demo.Migrations
 
             modelBuilder.Entity("CompletemtgDatabase.CardSet", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Uuid")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Artist")
                         .HasColumnType("nvarchar(max)");
@@ -184,6 +181,9 @@ namespace Demo.Migrations
 
                     b.Property<bool?>("HasContentWarning")
                         .HasColumnType("bit");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
                     b.Property<int>("IdentifiersId")
                         .HasColumnType("int");
@@ -303,10 +303,7 @@ namespace Demo.Migrations
 
                     b.Property<string>("SetCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("SetId")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Side")
                         .HasColumnType("nvarchar(max)");
@@ -331,17 +328,13 @@ namespace Demo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Uuid")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.PrimitiveCollection<string>("Variations")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Watermark")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Uuid");
 
                     b.HasIndex("IdentifiersId");
 
@@ -351,7 +344,7 @@ namespace Demo.Migrations
 
                     b.HasIndex("PurchaceUrlsId");
 
-                    b.HasIndex("SetId");
+                    b.HasIndex("SetCode");
 
                     b.HasIndex("SourceProductsId");
 
@@ -548,10 +541,7 @@ namespace Demo.Migrations
 
                     b.Property<string>("SetCode")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("SetId")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Side")
                         .HasColumnType("nvarchar(max)");
@@ -600,7 +590,7 @@ namespace Demo.Migrations
 
                     b.HasIndex("RelatedCardsId");
 
-                    b.HasIndex("SetId");
+                    b.HasIndex("SetCode");
 
                     b.ToTable("CardToken");
                 });
@@ -627,8 +617,8 @@ namespace Demo.Migrations
                     b.PrimitiveCollection<string>("SealedProductUuids")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SetId")
-                        .HasColumnType("int");
+                    b.Property<string>("SetCode")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -636,7 +626,7 @@ namespace Demo.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SetId");
+                    b.HasIndex("SetCode");
 
                     b.ToTable("DeckSet");
                 });
@@ -649,8 +639,8 @@ namespace Demo.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CardSetId")
-                        .HasColumnType("int");
+                    b.Property<string>("CardSetUuid")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("FaceName")
                         .HasColumnType("nvarchar(max)");
@@ -681,7 +671,7 @@ namespace Demo.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CardSetId");
+                    b.HasIndex("CardSetUuid");
 
                     b.HasIndex("IdentifiersId");
 
@@ -985,8 +975,8 @@ namespace Demo.Migrations
                     b.Property<string>("ReleaseDate")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SetId")
-                        .HasColumnType("int");
+                    b.Property<string>("SetCode")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Subtype")
                         .HasColumnType("nvarchar(max)");
@@ -1003,7 +993,7 @@ namespace Demo.Migrations
 
                     b.HasIndex("PurchaceUrlsId");
 
-                    b.HasIndex("SetId");
+                    b.HasIndex("SetCode");
 
                     b.ToTable("SealedProduct");
                 });
@@ -1180,11 +1170,8 @@ namespace Demo.Migrations
 
             modelBuilder.Entity("CompletemtgDatabase.Set", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("BaseSetSize")
                         .HasColumnType("int");
@@ -1195,12 +1182,11 @@ namespace Demo.Migrations
                     b.Property<int?>("CardsphereSetId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("CodeV3")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsFoilOnly")
                         .HasColumnType("bit");
@@ -1260,14 +1246,13 @@ namespace Demo.Migrations
                     b.Property<int>("TotalSetSize")
                         .HasColumnType("int");
 
-                    b.Property<int>("TranslationsId")
+                    b.Property<int?>("TranslationsId")
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("Code");
 
                     b.HasIndex("TranslationsId");
 
@@ -1281,6 +1266,9 @@ namespace Demo.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.PrimitiveCollection<string>("Etched")
+                        .HasColumnType("nvarchar(max)");
 
                     b.PrimitiveCollection<string>("Foil")
                         .HasColumnType("nvarchar(max)");
@@ -1402,7 +1390,9 @@ namespace Demo.Migrations
 
                     b.HasOne("CompletemtgDatabase.Set", null)
                         .WithMany("Cards")
-                        .HasForeignKey("SetId");
+                        .HasForeignKey("SetCode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("CompletemtgDatabase.SourceProducts", "SourceProducts")
                         .WithMany()
@@ -1448,7 +1438,9 @@ namespace Demo.Migrations
 
                     b.HasOne("CompletemtgDatabase.Set", null)
                         .WithMany("Tokens")
-                        .HasForeignKey("SetId");
+                        .HasForeignKey("SetCode")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Identifiers");
 
@@ -1459,14 +1451,14 @@ namespace Demo.Migrations
                 {
                     b.HasOne("CompletemtgDatabase.Set", null)
                         .WithMany("Decks")
-                        .HasForeignKey("SetId");
+                        .HasForeignKey("SetCode");
                 });
 
             modelBuilder.Entity("CompletemtgDatabase.ForeignData", b =>
                 {
                     b.HasOne("CompletemtgDatabase.CardSet", null)
                         .WithMany("ForeignData")
-                        .HasForeignKey("CardSetId");
+                        .HasForeignKey("CardSetUuid");
 
                     b.HasOne("CompletemtgDatabase.Identifiers", "Identifiers")
                         .WithMany()
@@ -1497,7 +1489,7 @@ namespace Demo.Migrations
 
                     b.HasOne("CompletemtgDatabase.Set", null)
                         .WithMany("SealedProduct")
-                        .HasForeignKey("SetId");
+                        .HasForeignKey("SetCode");
 
                     b.Navigation("Contents");
 
@@ -1545,9 +1537,7 @@ namespace Demo.Migrations
                 {
                     b.HasOne("CompletemtgDatabase.Translations", "Translations")
                         .WithMany()
-                        .HasForeignKey("TranslationsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TranslationsId");
 
                     b.Navigation("Translations");
                 });

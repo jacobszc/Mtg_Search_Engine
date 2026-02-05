@@ -6,6 +6,21 @@ namespace CompletemtgDatabase;
     {
         
      public mtgDbContext(DbContextOptions options) : base(options) { }
+
+     protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<Set>()
+        .HasKey(s => s.Code);
+
+
+    modelBuilder.Entity<CardSet>()
+      .HasKey(c => c.Uuid);
+
+      
+
+      
+    
+}
      
      
      

@@ -8,7 +8,7 @@ public class SourceProducts
   public int Id { get; set; }
 
  
-  //public string[] Etched { get; set; } = Array.Empty<string>();
+  public string[]? Etched { get; set; } 
 
   public string[]? Foil { get; set; } 
 

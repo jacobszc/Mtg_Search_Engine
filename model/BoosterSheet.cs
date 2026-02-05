@@ -1,5 +1,6 @@
 namespace CompletemtgDatabase;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 public class BoosterSheet {
 
@@ -9,13 +10,14 @@ public class BoosterSheet {
     
     public bool? BalanceColors { get; set; }
 
+    [JsonIgnore]
     [NotMapped]
     public Dictionary<string, int> Cards { get; set; } = new();
     
     public bool Foil { get; set; }
     
     public bool? Fixed { get; set; }
-    
+    [JsonIgnore]
     public int TotalWeight { get; set; }
 
 }

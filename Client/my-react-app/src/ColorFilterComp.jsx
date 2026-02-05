@@ -12,49 +12,49 @@ function ColorFilterComp() {
 
     return (
 
-        <div class = "filter-row">  
+        <div className = "filter-row">  
 
 
-  <div class="check-box-container"> 
+  <div className="check-box-container"> 
 
-    <div class="check-row">
+    <div className="check-row">
     <img src = {white} alt = "blue" width = {25} height = {20}></img>
-    <span class = "checkboxes"> 
+    <span className = "checkboxes"> 
     <input type="checkbox" id="checkbox-white"/>
     </span>
   </div>
 
-  <div class="check-row">
+  <div className="check-row">
     <img src = {blue} alt = "blue" width = {25} height = {20}></img>
-    <span class = "checkboxes"> 
+    <span className = "checkboxes"> 
     <input type="checkbox" id="checkbox-blue"/>
     </span>
   </div>
 
-  <div class="check-row">
+  <div className="check-row">
     <img src = {black} alt = "blue" width = {25} height = {20}></img>
-    <span class = "checkboxes"> 
+    <span className = "checkboxes"> 
     <input type="checkbox" id="checkbox-black"/>
     </span>
   </div>
 
-  <div class="check-row">
+  <div className="check-row">
     <img src = {red} alt = "blue" width = {25} height = {20}></img>
-    <span class = "checkboxes"> 
+    <span className = "checkboxes"> 
     <input type="checkbox" id="checkbox-red"/>
     </span>
   </div>
 
-  <div class="check-row">
+  <div className="check-row">
      <img src = {green} alt = "blue" width = {25} height = {20}></img>
-     <span class = "checkboxes">
+     <span className = "checkboxes">
      <input type="checkbox" id="checkbox-green"/> 
      </span>
   </div>
 
-  <div class="check-row">
+  <div className="check-row">
      <img src = {colorless} alt = "blue" width = {25} height = {20}></img>
-     <span class = "checkboxes">
+     <span className = "checkboxes">
      <input type="checkbox" id="checkbox-colorless"/> 
      </span>
   </div>

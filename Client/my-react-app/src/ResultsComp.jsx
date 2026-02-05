@@ -8,8 +8,21 @@ function ResultsComp({ScryFallUrl , CardDescriptions }) {
   //console.log(CardDescriptions.map(card => card.name));
 
   const[Hovered, setHovered] = useState(false);
+  const[Deck, setDeck] = useState([]);
+  
 
-  console.log("results comp" ,CardDescriptions)
+  /// function to add img to list and console log it
+
+
+  function handleClick(url) {
+
+    setDeck(prev => [...prev, url]);
+    console.log("you added: ", {url}, "to your deck!");
+    
+
+
+  }
+ 
 
  
   if (!ScryFallUrl) return <div>No image yet</div>;
@@ -38,20 +51,14 @@ function ResultsComp({ScryFallUrl , CardDescriptions }) {
         className="card-img"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
+        onClick={() => handleClick(url)}
       />
     ))
   )}
 
 
 {Hovered && (
-  <div classname = "hover-box">
-      
-      
-   <ul>{CardDescriptionList}</ul>
-      
-
-
-  </div>
+  <p>click img to add to deck!</p>
 
 
 

@@ -4,7 +4,7 @@ function DropdownComp() {
 
     return (
 
-        <div class ="dropdown-container">
+        <div className ="dropdown-container">
 
   
 

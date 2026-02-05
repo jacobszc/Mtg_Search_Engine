@@ -62,14 +62,15 @@ public class Set
     
     public int? TcgplayerGroupId { get; set; }
     
+    [JsonIgnore]
     public List<CardToken> Tokens { get; set; } = new List<CardToken>();
     
     public string? TokenSetCode { get; set; }
     
     public int TotalSetSize { get; set; }
     
-    public Translations Translations { get; set; } = new();
+    public Translations? Translations { get; set; } 
     
-    public string Type { get; set; } = string.Empty;
+    public string? Type { get; set; } 
 
 }

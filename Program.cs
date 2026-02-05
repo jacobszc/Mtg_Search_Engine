@@ -20,7 +20,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddOpenApi();
 
-//builder.Services.AddSingleton<MtgJsonDeserializer>(new MtgJsonDeserializer("C:\\Users\\Jacob\\repos\\AllPrintings.json"));
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("DevCors", policy =>
@@ -30,6 +30,8 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
+
 
 
 var app = builder.Build();
@@ -72,6 +74,21 @@ app.UseAuthorization();
 app.UseCors("DevCors");
 
 app.MapControllers();
+
+
+// using (var scope = app.Services.CreateScope())
+// {
+//     var db = scope.ServiceProvider.GetRequiredService<mtgDbContext>();
+
+//     var jsonPath = Path.Combine(app.Environment.ContentRootPath, "AllPrintings.json");
+
+   
+//     using var document = new AllPrintingsJsonDocumentConverter(jsonPath);
+
+//      var final =  new AllPrintingsJsonDocumentDeserialzier(document.GetJsonDocument(), db);
+
+    
+// }
 
 
 

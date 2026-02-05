@@ -20,12 +20,18 @@ public class ImageSearchController : ControllerBase {
  public ImageSearchController(HttpClient http) {
 
   _http = http;
-   /// 
+
+  if (!_http.DefaultRequestHeaders.UserAgent.Any())
+            _http.DefaultRequestHeaders.UserAgent.ParseAdd("MagicCardApp/1.0 (contact: jacobszc@buffalo.edu)");
+
+  if (!_http.DefaultRequestHeaders.Accept.Any())
+            _http.DefaultRequestHeaders.Accept.ParseAdd("application/json");
+   
 
  }
 
 [HttpGet("imagesearch")]
- public async Task<IActionResult> ImageSearch(string imgQueryResult) {
+ public async Task<ActionResult<IEnumerable<string>>> ImageSearch(string imgQueryResult) {
 
   if(string.IsNullOrWhiteSpace(imgQueryResult)) {
 
@@ -34,27 +40,26 @@ public class ImageSearchController : ControllerBase {
 
     }
 
+
+    var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+
     var query = Uri.EscapeDataString(imgQueryResult); 
-    var uri = $"https://api.scryfall.com/cards/named?fuzzy={query}";
-    _http.DefaultRequestHeaders.UserAgent.ParseAdd(
-    "MagicCardApp/1.0 (contact: jacobszc@buffalo.edu)"
+    var uri = $"https://api.scryfall.com/cards/named?fuzzy={query}"; // this is the path to scryfall to send the query name
 
-);
-    _http.DefaultRequestHeaders.Accept.ParseAdd("application/json");
+     var cardUrlList = new List<string>(capacity:50); // empty list of strings to store all imgs returned from scry fall
 
+
+
+
+
+    
       try
     {
       using HttpResponseMessage response = await _http.GetAsync(uri);
       response.EnsureSuccessStatusCode();
       var responseBody = await response.Content.ReadAsStringAsync();
 
-      var options = new JsonSerializerOptions {
-
-        PropertyNameCaseInsensitive = true
-
-
       
-      };
 
       var card= JsonSerializer.Deserialize<ScryfallCard>(responseBody, options) ?? throw new Exception("failed to desericaluize!");
 
