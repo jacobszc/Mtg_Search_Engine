@@ -11,7 +11,7 @@ import BackgroundComp from './BackgroundComp'
 function App() {
   
 
-const [ScryFallUrl, setScryFallUrl] = useState([]);
+const [ScryFallUrl, setScryFallUrl] = useState();
 
 const [CardDescriptions, setCardDescriptions] = useState([]);
 

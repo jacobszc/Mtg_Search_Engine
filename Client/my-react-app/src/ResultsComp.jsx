@@ -14,10 +14,10 @@ function ResultsComp({ScryFallUrl , CardDescriptions }) {
   /// function to add img to list and console log it
 
 
-  function handleClick(url) {
+  function handleClick(ScryFallUrl) {
 
-    setDeck(prev => [...prev, url]);
-    console.log("you added: ", {url}, "to your deck!");
+    setDeck(prev => [...prev, ScryFallUrl]);
+    console.log("this is your deck: ", {Deck}, "to your deck!");
     
 
 
@@ -43,17 +43,14 @@ function ResultsComp({ScryFallUrl , CardDescriptions }) {
   {ScryFallUrl.length === 0 ? (
     <pre>No cards loaded...</pre>
   ) : (
-    ScryFallUrl.map((url, index) => (
-      <img
-        key={index}
-        src={url}
-        alt="card"
-        className="card-img"
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onClick={() => handleClick(url)}
-      />
-    ))
+
+    <img src = {ScryFallUrl}
+    alt="card"
+    className="card-img"
+    onMouseEnter={() => setHovered(true)}
+    onMouseLeave={() => setHovered(false)}
+    onClick={() => handleClick(ScryFallUrl)}></img>
+   
   )}
 
 

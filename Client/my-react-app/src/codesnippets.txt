@@ -1,0 +1,14 @@
+//  // use below to loop thru list of urls to display image rather than one at a time in REsults cmop////
+ 
+ 
+//  ScryFallUrl.map((url, index) => (
+//       <img
+//         key={index}
+//         src={url}
+//         alt="card"
+//         className="card-img"
+//         onMouseEnter={() => setHovered(true)}
+//         onMouseLeave={() => setHovered(false)}
+//         onClick={() => handleClick(url)}
+//       />
+//     ))

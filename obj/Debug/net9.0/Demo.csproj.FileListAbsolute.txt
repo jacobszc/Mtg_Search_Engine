@@ -1,4 +1,3 @@
-C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\AllPrintings.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\appsettings.json
 C:\Users\Jacob\repos\Demo\bin\Debug\net9.0\Client\my-react-app\package-lock.json

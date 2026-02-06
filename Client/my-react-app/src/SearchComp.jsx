@@ -47,7 +47,7 @@ useEffect(() => {
    
     fetchImage(SubmittedCardName).then(resolved => {
 
-    if (!ignore) setScryFallUrl(prev => [...prev, resolved]);
+    if (!ignore) setScryFallUrl(resolved);
   
 
    });
