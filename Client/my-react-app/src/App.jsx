@@ -4,6 +4,7 @@ import ColorFilterComp from './ColorFilterComp'
 import './App.css'
 import ResultsComp from'./ResultsComp'
 import BackgroundComp from './BackgroundComp'
+import DeckStack from './Deckstack'
 
 
 
@@ -14,6 +15,8 @@ function App() {
 const [ScryFallUrl, setScryFallUrl] = useState();
 
 const [CardDescriptions, setCardDescriptions] = useState([]);
+
+const[Deck, setDeck] = useState([]);
 
 
 console.log("this is in app" , CardDescriptions)
@@ -42,7 +45,9 @@ console.log("this is in app" , CardDescriptions)
      
     <ColorFilterComp />
      
-    <ResultsComp ScryFallUrl = {ScryFallUrl} CardDescriptions = {CardDescriptions} />
+    <ResultsComp ScryFallUrl = {ScryFallUrl} CardDescriptions = {CardDescriptions} Deck = {Deck} setDeck = {setDeck}/>
+
+    <DeckStack Deck = {Deck}/>
 
 
 

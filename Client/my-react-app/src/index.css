@@ -202,6 +202,23 @@ pre {
   background-repeat: no-repeat;
   background-position: center;
 }
+/* caht gpt wrote css below, cant wait to see what it does! */
+
+.deck-stack {
+  user-select: none;
+}
+
+.deck-slot {
+  border-radius: 12px;
+}
+
+.deck-card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+}
 
 
 

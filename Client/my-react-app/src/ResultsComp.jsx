@@ -3,12 +3,12 @@ import { useState } from "react";
 
 
 
-function ResultsComp({ScryFallUrl , CardDescriptions }) { 
+function ResultsComp({ScryFallUrl , CardDescriptions, Deck, setDeck }) { 
 
   //console.log(CardDescriptions.map(card => card.name));
 
   const[Hovered, setHovered] = useState(false);
-  const[Deck, setDeck] = useState([]);
+  
   
 
   /// function to add img to list and console log it
