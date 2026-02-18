@@ -17,7 +17,7 @@ function ResultsComp({ScryFallUrl , CardDescriptions, Deck, setDeck }) {
   function handleClick(ScryFallUrl) {
 
     setDeck(prev => [...prev, ScryFallUrl]);
-    console.log("this is your deck: ", {Deck}, "to your deck!");
+    
     
 
 

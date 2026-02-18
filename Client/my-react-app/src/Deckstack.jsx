@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-function DeckStack({ Deck }) {
+function DeckStack({ Deck, setDeck }) {
   const MAX_SLOTS = 100;
   const CARDS_PER_ROW = 20;
 
-  const OFFSET_X = 10; // how much each card overlaps horizontally
-  const OFFSET_Y = 5;  // vertical spacing between rows
+  const OFFSET_X = 10;
+  const OFFSET_Y = 5;
 
   const CARD_W = 80;
   const CARD_H = 112;
@@ -14,18 +14,27 @@ function DeckStack({ Deck }) {
 
   const [hoveredCard, setHoveredCard] = useState(null);
 
+  function removeOneCopy(urlToRemove) {
+    setDeck(prev => {
+      const index = prev.indexOf(urlToRemove);
+      if (index === -1) return prev;
+
+      return [...prev.slice(0, index), ...prev.slice(index + 1)];
+    });
+  }
+
   return (
     <>
       <div
         className="deck-stack"
         style={{
           position: "relative",
-          width: CARD_W + OFFSET_X * (CARDS_PER_ROW - 1), // total width of deck area
-          height: totalRows * (CARD_H + OFFSET_Y),        // total height of deck area
+          width: CARD_W + OFFSET_X * (CARDS_PER_ROW - 1),
+          height: totalRows * (CARD_H + OFFSET_Y),
         }}
       >
         {Array.from({ length: MAX_SLOTS }, (_, i) => {
-          const card = Deck[i];
+          const card = Deck[i]; // card is a URL string
 
           const row = Math.floor(i / CARDS_PER_ROW);
           const col = i % CARDS_PER_ROW;
@@ -40,16 +49,17 @@ function DeckStack({ Deck }) {
                 width: CARD_W,
                 height: CARD_H,
                 pointerEvents: card ? "auto" : "none",
-                zIndex: card ? col : -1, // cards further right appear on top
+                zIndex: card ? col : -1,
               }}
             >
               {card && (
                 <img
-                  src={card.img ?? card}
+                  src={card}
                   alt=""
                   draggable={false}
                   onMouseEnter={() => setHoveredCard(card)}
                   onMouseLeave={() => setHoveredCard(null)}
+                  onClick={() => removeOneCopy(card)} // click card to remove 1 copy
                   style={{
                     width: "100%",
                     height: "100%",
@@ -65,7 +75,7 @@ function DeckStack({ Deck }) {
         })}
       </div>
 
-     
+      {/* Hover preview */}
       {hoveredCard && (
         <div
           style={{
@@ -75,16 +85,18 @@ function DeckStack({ Deck }) {
             transform: "translateY(-50%)",
             width: "320px",
             zIndex: 9999,
-            pointerEvents: "none", // prevents preview from interrupting hover
+            pointerEvents: "auto", // IMPORTANT: allow clicking
           }}
         >
           <img
-            src={hoveredCard.img ?? hoveredCard}
+            src={hoveredCard}
             alt=""
+            onClick={() => removeOneCopy(hoveredCard)}
             style={{
               width: "100%",
               borderRadius: "16px",
               boxShadow: "0 8px 30px rgba(0,0,0,0.5)",
+              cursor: "pointer",
             }}
           />
         </div>

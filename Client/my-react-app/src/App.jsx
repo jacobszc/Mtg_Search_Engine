@@ -47,7 +47,7 @@ console.log("this is in app" , CardDescriptions)
      
     <ResultsComp ScryFallUrl = {ScryFallUrl} CardDescriptions = {CardDescriptions} Deck = {Deck} setDeck = {setDeck}/>
 
-    <DeckStack Deck = {Deck}/>
+    <DeckStack Deck = {Deck} setDeck = {setDeck} />
 
 
 
